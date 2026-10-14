@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { StepUpload } from "@/components/steps/StepUpload";
 
-export const metadata: Metadata = { title: "Upload · Shelf Shot Studio" };
+export const metadata: Metadata = { title: "Upload · Mockup Studio" };
 
 export const instant = false;
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { StepCustomize } from "@/components/steps/StepCustomize";
 
-export const metadata: Metadata = { title: "Customize · Shelf Shot Studio" };
+export const metadata: Metadata = { title: "Customize · Mockup Studio" };
 
 export const instant = false;
 

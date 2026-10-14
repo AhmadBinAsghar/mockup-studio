@@ -9,7 +9,7 @@ import { pickDesign, type PromptStyle } from "./promptDesigns";
 
 const SCHEMA_REFERENCE = `
 ╔══════════════════════════════════════════════════════════════╗
-║             SHELFSHOT TEMPLATE JSON — FULL SCHEMA            ║
+║             MOCKUP STUDIO TEMPLATE JSON — FULL SCHEMA        ║
 ╚══════════════════════════════════════════════════════════════╝
 
 TOP-LEVEL OBJECT
@@ -227,8 +227,8 @@ export function generateMasterPrompt(options: MasterPromptOptions): string {
           ? 'This is a FEATURE-CARDS design: the "callout" layers below are the point of the design — keep their numbers, keep them after the device layers, and leave the devices uncovered.'
           : "This is a CLEAN design: do NOT add skew, depth beyond what is given, cuts, or extra shapes.";
 
-  return `You are a JSON template designer for ShelfShot — an app-store screenshot marketing studio.
-Produce ONE complete ShelfShot template JSON inside a fenced \`\`\`json … \`\`\` block.
+  return `You are a JSON template designer for Mockup Studio — an app-store screenshot marketing studio.
+Produce ONE complete Mockup Studio template JSON inside a fenced \`\`\`json … \`\`\` block.
 
 ╔════════════════════════════════════════════════════════════╗
 ║  STRICT OUTPUT RULES                                        ║

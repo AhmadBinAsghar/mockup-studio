@@ -62,7 +62,7 @@ export function Wizard({ children }: { children: ReactNode }) {
     <div className="mx-auto flex w-full max-w-7xl flex-1 flex-col gap-4 p-4 lg:p-6">
       <header className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
-          <h1 className="text-xl font-extrabold">Shelf Shot Studio</h1>
+          <h1 className="text-xl font-extrabold">Mockup Studio</h1>
           <div className="flex items-center gap-2">
             <ProjectSwitcher />
             <ThemeToggle />

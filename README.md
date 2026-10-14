@@ -1,4 +1,4 @@
-# Shelf Shot Studio
+# Mockup Studio
 
 Turn raw app screenshots into store-ready marketing images for Google Play and the App Store.
 Everything runs in the browser: no backend, no account, screenshots never leave your machine.

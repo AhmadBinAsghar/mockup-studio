@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shelf Shot Studio",
+  title: "Mockup Studio",
   description: "Turn raw app screenshots into store-ready marketing images, entirely in your browser.",
 };
 
