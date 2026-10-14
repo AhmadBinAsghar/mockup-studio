@@ -1,0 +1,360 @@
+{
+  "id": "library-3d",
+  "name": "Library 3D",
+  "category": "education",
+  "description": "An isometric golden-edged phone standing on a stack of books under a warm reading lamp.",
+  "themeColor": "#6366F1",
+  "thumbnail": "/templates/library-3d.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#1E1B4B", "#0B0720"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -38,
+      "y": -28,
+      "w": 100,
+      "fill": {
+        "type": "radial",
+        "color": "#FBBF24"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -5,
+      "y": 55,
+      "w": 110,
+      "fill": {
+        "type": "radial",
+        "color": "#6366F1"
+      },
+      "opacity": 0.35
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 13,
+      "y": 152,
+      "w": 74,
+      "h": 8,
+      "fill": {
+        "type": "solid",
+        "color": "#000000"
+      },
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 24,
+      "y": 152,
+      "w": 56,
+      "h": 7,
+      "radius": 1.6,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#DC2626", "#7F1D1D"]
+      },
+      "rotate": -1,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 27,
+      "y": 145,
+      "w": 50,
+      "h": 7,
+      "radius": 1.6,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#2563EB", "#1E3A8A"]
+      },
+      "rotate": 1.5,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 25,
+      "y": 138,
+      "w": 52,
+      "h": 7,
+      "radius": 1.6,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#16A34A", "#14532D"]
+      },
+      "rotate": -2,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 80.62,
+      "y": 60.42,
+      "w": 14.76,
+      "h": 11.16,
+      "radius": 1.08,
+      "rotate": 14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#F59E0B", "#92400E"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 82.18,
+      "y": 61.63,
+      "w": 12.6,
+      "h": 9.36,
+      "radius": 0.54,
+      "rotate": 14,
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 80.99,
+      "y": 58.85,
+      "w": 1.44,
+      "h": 11.16,
+      "radius": 0.54,
+      "rotate": 14,
+      "fill": {
+        "type": "solid",
+        "color": "#92400E"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 85.26,
+      "y": 63.67,
+      "w": 8.28,
+      "h": 0.9,
+      "radius": 0.36,
+      "rotate": 14,
+      "fill": {
+        "type": "solid",
+        "color": "#CBD5E1"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 84.65,
+      "y": 66.12,
+      "w": 8.28,
+      "h": 0.9,
+      "radius": 0.36,
+      "rotate": 14,
+      "fill": {
+        "type": "solid",
+        "color": "#CBD5E1"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 7.34,
+      "y": 119.48,
+      "w": 8.5,
+      "h": 3.74,
+      "radius": 0.85,
+      "rotate": -10,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#1E293B", "#0F172A"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10.17, 113.31],
+        [19.37, 116.52],
+        [11.83, 122.69],
+        [2.63, 119.48]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#334155", "#0F172A"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 17.85,
+      "y": 116.27,
+      "w": 0.51,
+      "h": 5.78,
+      "radius": 0.26,
+      "rotate": -10,
+      "fill": {
+        "type": "solid",
+        "color": "#FBBF24"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 18.24,
+      "y": 121.62,
+      "w": 1.36,
+      "fill": {
+        "type": "solid",
+        "color": "#FBBF24"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [91.21, 115.15],
+        [91.69, 118.59],
+        [94.99, 119.65],
+        [91.87, 121.17],
+        [91.87, 124.64],
+        [89.47, 122.13],
+        [86.17, 123.21],
+        [87.81, 120.15],
+        [85.76, 117.35],
+        [89.18, 117.96]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#F59E0B"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 8.81,
+      "y": 59.73,
+      "w": 9.8,
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FEF9C3", "#FACC15"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 12.89,
+      "y": 69.54,
+      "w": 4.2,
+      "h": 2.24,
+      "radius": 0.56,
+      "rotate": -12,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#CBD5E1", "#64748B"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 13.83,
+      "y": 71.88,
+      "w": 3.08,
+      "h": 1.12,
+      "radius": 0.42,
+      "rotate": -12,
+      "fill": {
+        "type": "solid",
+        "color": "#475569"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [80, 26.8],
+        [80.64, 29.36],
+        [83.2, 30],
+        [80.64, 30.64],
+        [80, 33.2],
+        [79.36, 30.64],
+        [76.8, 30],
+        [79.36, 29.36]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#FDE68A"
+      },
+      "opacity": 0.9
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "left",
+      "color": "#FFFFFF",
+      "accentColor": "#FCD34D"
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 8,
+      "y": 25,
+      "w": 78,
+      "fontSize": 3.3,
+      "align": "left",
+      "color": "#C7D2FE"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 26,
+      "y": 36,
+      "w": 52,
+      "rotate": 12,
+      "skewY": -12,
+      "depth": 4.2,
+      "depthAngle": 64,
+      "depthColor": "#F59E0B",
+      "frameStyle": "dark",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

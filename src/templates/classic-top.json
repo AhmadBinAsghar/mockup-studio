@@ -1,0 +1,98 @@
+{
+  "id": "classic-top",
+  "name": "Classic Top",
+  "category": "general",
+  "description": "The clean classic: bold headline over a centered phone, softly lit. Recolors with your brand.",
+  "thumbnail": "/templates/classic-top.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["{brand}", "{brand-dark}"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -25,
+      "y": 33,
+      "w": 150,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -6,
+      "y": 52,
+      "w": 112,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.35,
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -20,
+      "y": 38,
+      "w": 140,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.3,
+      "opacity": 0.1
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 17,
+      "y": 154.5,
+      "w": 66,
+      "h": 7,
+      "fill": {
+        "type": "solid",
+        "color": "#000000"
+      },
+      "opacity": 0.22
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7.2,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pale}",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 23.5,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": false,
+      "id": "phone",
+      "x": 17,
+      "y": 33,
+      "w": 66,
+      "frameStyle": "silver",
+      "gloss": true,
+      "depth": 1,
+      "depthAngle": 90,
+      "depthColor": "{brand-deep}"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

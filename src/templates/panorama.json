@@ -1,0 +1,68 @@
+{
+  "id": "panorama",
+  "name": "Panorama",
+  "category": "general",
+  "description": "One continuous background flowing across all your screenshots, with phones stepping up and down.",
+  "thumbnail": "/templates/panorama.png",
+  "background": {
+    "type": "gradient",
+    "angle": 100,
+    "stops": ["{brand-deep}", "{brand-pop}"],
+    "span": true
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -5,
+      "y": 27,
+      "w": 110,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.28
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pale}",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 17,
+      "y": 36,
+      "w": 60,
+      "rotate": 6,
+      "alternateOffset": 8,
+      "depth": 1.4,
+      "depthAngle": 80,
+      "depthColor": "{brand-deep}",
+      "frameStyle": "titanium",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

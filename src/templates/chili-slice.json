@@ -1,0 +1,643 @@
+{
+  "id": "chili-slice",
+  "name": "Chili Slice",
+  "category": "food",
+  "description": "A phone sliced by a blade of heat, with chilies crossing the cut and a fiery edge.",
+  "themeColor": "#EF4444",
+  "thumbnail": "/templates/chili-slice.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#150303", "#4A0E0E"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -40,
+      "y": -10,
+      "w": 140,
+      "fill": {
+        "type": "radial",
+        "color": "#EF4444"
+      },
+      "opacity": 0.7
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 20,
+      "y": 68,
+      "w": 100,
+      "fill": {
+        "type": "radial",
+        "color": "#F97316"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 64.89,
+      "y": 137.89,
+      "w": 5.13,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 66.82,
+      "y": 139.81,
+      "w": 1.28,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 57.13,
+      "y": 46.86,
+      "w": 8.41,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 60.28,
+      "y": 50.02,
+      "w": 2.1,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 64.66,
+      "y": 93.97,
+      "w": 11.17,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 68.85,
+      "y": 98.16,
+      "w": 2.79,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 20.25,
+      "y": 136.52,
+      "w": 9.72,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 23.89,
+      "y": 140.17,
+      "w": 2.43,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 61.12,
+      "y": 38.15,
+      "w": 7.3,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 63.86,
+      "y": 40.88,
+      "w": 1.82,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 28.77,
+      "y": 153.68,
+      "w": 5.74,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 30.92,
+      "y": 155.83,
+      "w": 1.43,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 70.77,
+      "y": 131.34,
+      "w": 5.43,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 72.81,
+      "y": 133.37,
+      "w": 1.36,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 3.23,
+      "y": 140.64,
+      "w": 5.03,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 5.12,
+      "y": 142.53,
+      "w": 1.26,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 25.41,
+      "y": 52.36,
+      "w": 7.34,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 28.16,
+      "y": 55.11,
+      "w": 1.83,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 93.28,
+      "y": 69.96,
+      "w": 3.91,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 94.74,
+      "y": 71.42,
+      "w": 0.98,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 78.68,
+      "y": 77.82,
+      "w": 6.79,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 81.22,
+      "y": 80.36,
+      "w": 1.7,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 91.39,
+      "y": 72.06,
+      "w": 6.6,
+      "fill": {
+        "type": "radial",
+        "color": "#FB923C"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 93.86,
+      "y": 74.53,
+      "w": 1.65,
+      "fill": {
+        "type": "solid",
+        "color": "#FEF3C7"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 6.8,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "#FDE047",
+      "uppercase": true,
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#FECACA"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "top",
+      "x": 14,
+      "y": 35,
+      "w": 58,
+      "rotate": 9,
+      "depth": 1.6,
+      "depthAngle": 100,
+      "depthColor": "#2A0707",
+      "cuts": [
+        {
+          "x1": -0.15,
+          "y1": 0.4,
+          "x2": 1.15,
+          "y2": 0.62,
+          "keep": "left"
+        }
+      ],
+      "cutGlow": "#FDE047",
+      "frameStyle": "dark",
+      "gloss": true
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "bottom",
+      "x": 27,
+      "y": 46,
+      "w": 58,
+      "rotate": 9,
+      "depth": 1.6,
+      "depthAngle": 100,
+      "depthColor": "#2A0707",
+      "cuts": [
+        {
+          "x1": -0.15,
+          "y1": 0.4,
+          "x2": 1.15,
+          "y2": 0.62,
+          "keep": "right"
+        }
+      ],
+      "cutGlow": "#FDE047",
+      "frameStyle": "dark"
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [3.52, 98.2],
+        [6.16, 100.3],
+        [8.85, 102.31],
+        [11.57, 104.19],
+        [14.3, 105.86],
+        [17.02, 107.25],
+        [19.73, 108.29],
+        [22.42, 108.92],
+        [25.09, 109.03],
+        [27.62, 108.53],
+        [29.87, 107.4],
+        [31.69, 105.78],
+        [33.1, 103.79],
+        [34.19, 101.51],
+        [35.06, 98.97],
+        [35.76, 96.18],
+        [36.33, 93.19],
+        [35.82, 93.03],
+        [34.48, 95.72],
+        [33.1, 98.08],
+        [31.68, 100.05],
+        [30.24, 101.53],
+        [28.86, 102.48],
+        [27.6, 102.93],
+        [26.47, 102.99],
+        [25.35, 102.77],
+        [24.06, 102.29],
+        [22.55, 101.5],
+        [20.8, 100.38],
+        [18.84, 98.94],
+        [16.71, 97.21],
+        [14.43, 95.26],
+        [12.04, 93.16],
+        [9.53, 90.99]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#EF4444", "#B91C1C"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 2.63,
+      "y": 92.73,
+      "w": 5.44,
+      "h": 3.06,
+      "radius": 1.36,
+      "rotate": -48,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#4ADE80", "#15803D"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [101.66, 120.7],
+        [98.99, 118.34],
+        [96.25, 116.05],
+        [93.48, 113.92],
+        [90.69, 112.01],
+        [87.89, 110.38],
+        [85.09, 109.13],
+        [82.27, 108.32],
+        [79.46, 108.05],
+        [76.75, 108.44],
+        [74.32, 109.51],
+        [72.3, 111.12],
+        [70.7, 113.15],
+        [69.41, 115.5],
+        [68.35, 118.14],
+        [67.46, 121.04],
+        [66.69, 124.18],
+        [67.23, 124.38],
+        [68.78, 121.61],
+        [70.38, 119.18],
+        [71.99, 117.19],
+        [73.59, 115.7],
+        [75.11, 114.77],
+        [76.46, 114.36],
+        [77.66, 114.36],
+        [78.84, 114.65],
+        [80.17, 115.23],
+        [81.72, 116.15],
+        [83.51, 117.43],
+        [85.5, 119.07],
+        [87.66, 121.02],
+        [89.96, 123.2],
+        [92.38, 125.56],
+        [94.91, 127.99]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#EF4444", "#B91C1C"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 96.63,
+      "y": 123.14,
+      "w": 5.76,
+      "h": 3.24,
+      "radius": 1.44,
+      "rotate": 135,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#4ADE80", "#15803D"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [91.22, 29.11],
+        [92.16, 31.83],
+        [93.93, 34.7],
+        [94.49, 37.93],
+        [93.13, 40.82],
+        [90.26, 42.59],
+        [87.5, 42.1],
+        [85.41, 39.46],
+        [85.12, 36.28],
+        [86.93, 34.04],
+        [88.83, 32.95],
+        [89.17, 31.02]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F97316", "#DC2626"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90.29, 34.35],
+        [91.33, 36.52],
+        [91.86, 39.17],
+        [90.18, 41.43],
+        [87.97, 41.04],
+        [87.17, 38.34],
+        [88.57, 36.03]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE047", "#FB923C"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [8.89, 142.08],
+        [10.87, 144.71],
+        [13.81, 147.2],
+        [15.57, 150.51],
+        [15.1, 154.13],
+        [12.61, 157.07],
+        [9.44, 157.51],
+        [6.23, 155.38],
+        [4.79, 152.02],
+        [5.97, 148.95],
+        [7.65, 147.1],
+        [7.34, 144.88]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F97316", "#DC2626"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [9.73, 148.1],
+        [11.63, 150.09],
+        [13.14, 152.79],
+        [12.11, 155.84],
+        [9.58, 156.2],
+        [7.75, 153.55],
+        [8.46, 150.54]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE047", "#FB923C"]
+      }
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "top": {
+        "frame": "tablet-generic",
+        "x": 10,
+        "y": 40,
+        "w": 66
+      },
+      "bottom": {
+        "frame": "tablet-generic",
+        "x": 24,
+        "y": 52,
+        "w": 66
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

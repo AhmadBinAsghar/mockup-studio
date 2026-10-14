@@ -1,0 +1,433 @@
+{
+  "id": "quest-realm",
+  "name": "Quest Realm",
+  "category": "games",
+  "description": "An enchanted emerald realm of glowing rune circles, crossed swords and crystals around a gold-framed phone.",
+  "themeColor": "#064E3B",
+  "thumbnail": "/templates/quest-realm.png",
+  "background": {
+    "type": "gradient",
+    "angle": 200,
+    "stops": ["#064E3B", "#021F18"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 5,
+      "y": 5,
+      "w": 130,
+      "fill": {
+        "type": "radial",
+        "color": "#34D399"
+      },
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 27,
+      "y": 19,
+      "w": 90,
+      "stroke": "#6EE7B7",
+      "strokeWidth": 0.5,
+      "dash": [2.4, 1.6],
+      "opacity": 0.45
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 38,
+      "y": 30,
+      "w": 68,
+      "stroke": "#6EE7B7",
+      "strokeWidth": 0.5,
+      "dash": [2.4, 1.6],
+      "opacity": 0.37
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 49,
+      "y": 41,
+      "w": 46,
+      "stroke": "#6EE7B7",
+      "strokeWidth": 0.5,
+      "dash": [2.4, 1.6],
+      "opacity": 0.29000000000000004
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -11,
+      "y": 115,
+      "w": 70,
+      "stroke": "#FDE047",
+      "strokeWidth": 0.4,
+      "dash": [1.6, 1.8],
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -2,
+      "y": 124,
+      "w": 52,
+      "stroke": "#FDE047",
+      "strokeWidth": 0.4,
+      "dash": [1.6, 1.8],
+      "opacity": 0.33
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 7,
+      "y": 133,
+      "w": 34,
+      "stroke": "#FDE047",
+      "strokeWidth": 0.4,
+      "dash": [1.6, 1.8],
+      "opacity": 0.26
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [96.16, 21],
+        [95.04, 25.84],
+        [84.33, 39.55],
+        [81.02, 36.96],
+        [91.73, 23.25]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#F8FAFC", "#94A3B8"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 76.91,
+      "y": 37.68,
+      "w": 10.8,
+      "h": 2.1,
+      "radius": 0.9,
+      "rotate": 38,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 78.67,
+      "y": 39.04,
+      "w": 2.1,
+      "h": 6,
+      "radius": 0.9,
+      "rotate": 38,
+      "fill": {
+        "type": "solid",
+        "color": "#7C2D12"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 75.12,
+      "y": 44.17,
+      "w": 3.3,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [81.84, 21],
+        [86.27, 23.25],
+        [96.98, 36.96],
+        [93.67, 39.55],
+        [82.96, 25.84]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#F8FAFC", "#94A3B8"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 90.29,
+      "y": 37.68,
+      "w": 10.8,
+      "h": 2.1,
+      "radius": 0.9,
+      "rotate": -38,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 97.23,
+      "y": 39.04,
+      "w": 2.1,
+      "h": 6,
+      "radius": 0.9,
+      "rotate": -38,
+      "fill": {
+        "type": "solid",
+        "color": "#7C2D12"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 99.58,
+      "y": 44.17,
+      "w": 3.3,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [9.92, 110.22],
+        [19.88, 116.69],
+        [14.08, 129.78],
+        [3.45, 120.18]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#34D399", "#047857"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [9.92, 110.22],
+        [19.88, 116.69],
+        [3.45, 120.18]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FFFFFF", "#34D399"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [96.89, 121.22],
+        [92.39, 126.58],
+        [85.5, 125.36],
+        [83.11, 118.78],
+        [87.61, 113.42],
+        [94.5, 114.64]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FDE047", "#B45309"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [94.14, 120.73],
+        [91.44, 123.95],
+        [87.3, 123.22],
+        [85.86, 119.27],
+        [88.56, 116.05],
+        [92.7, 116.78]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#B45309", "#FDE047"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 82.35,
+      "y": 148.91,
+      "w": 14.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#A78BFA", "#6D28D9"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 88.99,
+      "y": 146.36,
+      "w": 3.96,
+      "h": 6.12,
+      "radius": 0.72,
+      "rotate": 12,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#E2E8F0", "#94A3B8"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 89.02,
+      "y": 145,
+      "w": 5.4,
+      "h": 1.8,
+      "radius": 0.72,
+      "rotate": 12,
+      "fill": {
+        "type": "solid",
+        "color": "#7C2D12"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 86.72,
+      "y": 152.54,
+      "w": 2.88,
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF66"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10, 56.8],
+        [10.64, 59.36],
+        [13.2, 60],
+        [10.64, 60.64],
+        [10, 63.2],
+        [9.36, 60.64],
+        [6.8, 60],
+        [9.36, 59.36]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#FDE68A"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [60, 21.6],
+        [60.48, 23.52],
+        [62.4, 24],
+        [60.48, 24.48],
+        [60, 26.4],
+        [59.52, 24.48],
+        [57.6, 24],
+        [59.52, 23.52]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#A7F3D0"
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 70,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "left",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "accentColor": "#FDE047",
+      "stroke": "#022C22",
+      "strokeWidth": 0.6,
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 8,
+      "y": 28,
+      "w": 60,
+      "fontSize": 3.3,
+      "align": "left",
+      "color": "#A7F3D0"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 30,
+      "y": 52,
+      "w": 80,
+      "rotate": -12,
+      "frameStyle": "gold",
+      "depth": 2.2,
+      "depthAngle": 100,
+      "depthColor": "#78350F",
+      "gloss": true,
+      "rim": "#6EE7B7"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

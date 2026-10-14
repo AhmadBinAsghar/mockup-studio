@@ -1,0 +1,324 @@
+{
+  "id": "sprint-track",
+  "name": "Sprint Track",
+  "category": "fitness",
+  "description": "Athletics-track lanes sweep the canvas in orange as a rimmed phone sprints through at an angle.",
+  "themeColor": "#F97316",
+  "thumbnail": "/templates/sprint-track.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#06101F", "#0B1B3A"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -15,
+      "y": 55,
+      "w": 130,
+      "fill": {
+        "type": "radial",
+        "color": "#F97316"
+      },
+      "opacity": 0.3
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -40,
+      "y": 94,
+      "w": 180,
+      "h": 112,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -30,
+      "y": 100,
+      "w": 160,
+      "h": 100,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.49000000000000005
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -20,
+      "y": 106,
+      "w": 140,
+      "h": 88,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.43000000000000005
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -10,
+      "y": 112,
+      "w": 120,
+      "h": 76,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.37000000000000005
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 0,
+      "y": 118,
+      "w": 100,
+      "h": 64,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.31000000000000005
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 10,
+      "y": 124,
+      "w": 80,
+      "h": 52,
+      "stroke": "#F97316",
+      "strokeWidth": 1.5,
+      "opacity": 0.25000000000000006
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -40,
+      "y": 94,
+      "w": 180,
+      "h": 112,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -30,
+      "y": 100,
+      "w": 160,
+      "h": 100,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -20,
+      "y": 106,
+      "w": 140,
+      "h": 88,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -10,
+      "y": 112,
+      "w": 120,
+      "h": 76,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 0,
+      "y": 118,
+      "w": 100,
+      "h": 64,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 10,
+      "y": 124,
+      "w": 80,
+      "h": 52,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.18,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 80.58,
+      "y": 34.06,
+      "w": 14.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FFFFFF", "#CBD5E1"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 82.18,
+      "y": 35.66,
+      "w": 11.2,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#F97316", "#7C2D12"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 88.16,
+      "y": 31.95,
+      "w": 2.24,
+      "h": 1.6,
+      "radius": 0.48,
+      "rotate": 10,
+      "fill": {
+        "type": "solid",
+        "color": "#94A3B8"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 88.31,
+      "y": 37.71,
+      "w": 0.64,
+      "h": 4.8,
+      "radius": 0.32,
+      "rotate": 40,
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10.19, 119.84],
+        [6.07, 129.67],
+        [9.85, 129],
+        [9.5, 136.21],
+        [14.13, 125.65],
+        [10.35, 126.31]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FACC15", "#F97316"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [91.11, 122.08],
+        [92.3, 125.15],
+        [94.43, 128.36],
+        [95.21, 132.02],
+        [93.77, 135.38],
+        [90.56, 137.51],
+        [87.39, 137.07],
+        [84.9, 134.13],
+        [84.43, 130.51],
+        [86.42, 127.88],
+        [88.54, 126.56],
+        [88.86, 124.35]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F97316", "#DC2626"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90.27, 128.1],
+        [91.54, 130.54],
+        [92.25, 133.55],
+        [90.42, 136.2],
+        [87.89, 135.84],
+        [86.86, 132.79],
+        [88.37, 130.09]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE047", "#FB923C"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "accentColor": "#F97316",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#BFDBFE"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 20,
+      "y": 38,
+      "w": 58,
+      "rotate": -11,
+      "skewY": 6,
+      "depth": 2.4,
+      "depthAngle": 80,
+      "depthColor": "#7C2D12",
+      "frameStyle": "titanium",
+      "gloss": true,
+      "rim": "#F97316"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

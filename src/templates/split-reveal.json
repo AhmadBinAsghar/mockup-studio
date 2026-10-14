@@ -1,0 +1,175 @@
+{
+  "id": "split-reveal",
+  "name": "Split Reveal",
+  "category": "general",
+  "description": "The phone is cut down the middle and staggered over a split backdrop; each half shows half of your screenshot.",
+  "thumbnail": "/templates/split-reveal.png",
+  "background": {
+    "type": "solid",
+    "color": "{brand-deep}"
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 0],
+        [54, 0],
+        [44, 100],
+        [0, 100]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-deep}"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [54, 0],
+        [100, 0],
+        [100, 100],
+        [44, 100]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["{brand}", "{brand-glow}"]
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 25,
+      "y": 77,
+      "w": 70,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.5,
+      "opacity": 0.18
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90, 33],
+        [90.6, 35.4],
+        [93, 36],
+        [90.6, 36.6],
+        [90, 39],
+        [89.4, 36.6],
+        [87, 36],
+        [89.4, 35.4]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "opacity": 0.9
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pop}",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "left",
+      "x": 10,
+      "y": 34,
+      "w": 66,
+      "rotate": -6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#0A0A12",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "right"
+        }
+      ],
+      "cutGlow": "#FFFFFF"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "right",
+      "x": 25,
+      "y": 47,
+      "w": 66,
+      "rotate": 6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#0A0A12",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "left"
+        }
+      ],
+      "cutGlow": "#FFFFFF",
+      "gloss": true
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "left": {
+        "frame": "tablet-generic",
+        "x": 8,
+        "y": 38,
+        "w": 72
+      },
+      "right": {
+        "frame": "tablet-generic",
+        "x": 20,
+        "y": 52,
+        "w": 72
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

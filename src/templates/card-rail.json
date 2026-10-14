@@ -1,0 +1,113 @@
+{
+  "id": "card-rail",
+  "name": "Card Rail",
+  "category": "general",
+  "description": "A bright, airy layout: phone on the left, three white cards with a colored accent bar on the right.",
+  "thumbnail": "/templates/card-rail.png",
+  "background": { "type": "gradient", "angle": 180, "stops": ["{brand-pale}", "#FFFFFF"] },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 40,
+      "y": 28,
+      "w": 80,
+      "fill": { "type": "radial", "color": "{brand-light}" },
+      "opacity": 0.3
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -18,
+      "y": 120,
+      "w": 60,
+      "fill": { "type": "radial", "color": "{brand-glow}" },
+      "opacity": 0.22
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 6,
+      "w": 84,
+      "fontSize": 7.2,
+      "weight": 800,
+      "align": "center",
+      "color": "{brand-deep}",
+      "accentColor": "{brand}",
+      "maxLines": 2
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 12,
+      "y": 22,
+      "w": 76,
+      "fontSize": 3.2,
+      "align": "center",
+      "color": "#475569",
+      "maxLines": 2
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "id": "phone",
+      "x": 4,
+      "y": 40,
+      "w": 50,
+      "rotate": -4,
+      "shadow": true,
+      "bleed": true,
+      "frameStyle": "white",
+      "gloss": true
+    },
+    {
+      "type": "callout",
+      "id": "card1",
+      "index": 0,
+      "x": 60,
+      "y": 50,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "accent",
+      "fill": "#FFFFFF",
+      "color": "{brand-deep}",
+      "accentColor": "{brand}"
+    },
+    {
+      "type": "callout",
+      "id": "card2",
+      "index": 1,
+      "x": 60,
+      "y": 82,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "accent",
+      "fill": "#FFFFFF",
+      "color": "{brand-deep}",
+      "accentColor": "{brand}"
+    },
+    {
+      "type": "callout",
+      "id": "card3",
+      "index": 2,
+      "x": 60,
+      "y": 114,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "accent",
+      "fill": "#FFFFFF",
+      "color": "{brand-deep}",
+      "accentColor": "{brand}"
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "card1": { "x": 58, "y": 36, "w": 38 },
+      "card2": { "x": 58, "y": 64, "w": 38 },
+      "card3": { "x": 58, "y": 92, "w": 38 },
+      "phone": { "frame": "tablet-generic", "x": 4, "y": 32, "w": 50 }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

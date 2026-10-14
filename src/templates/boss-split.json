@@ -1,0 +1,308 @@
+{
+  "id": "boss-split",
+  "name": "Boss Split",
+  "category": "games",
+  "description": "A boss-fight clash: crimson against violet with lightning crackling through the cut phone.",
+  "themeColor": "#F43F5E",
+  "thumbnail": "/templates/boss-split.png",
+  "background": {
+    "type": "solid",
+    "color": "#12031F"
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 0],
+        [54, 0],
+        [44, 100],
+        [0, 100]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#12031F"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [54, 0],
+        [100, 0],
+        [100, 100],
+        [44, 100]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#F43F5E", "#7C3AED"]
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 0,
+      "y": 50,
+      "w": 100,
+      "fill": {
+        "type": "radial",
+        "color": "#FDE047"
+      },
+      "opacity": 0.28
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [60.49, 75.65],
+        [36.13, 100.24],
+        [48.33, 102.84],
+        [38.49, 124.13],
+        [65.32, 97.94],
+        [53.12, 95.35]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FDE047", "#F59E0B"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [12.69, 138.86],
+        [8.97, 153.02],
+        [13.99, 151.39],
+        [14.89, 161.28],
+        [19.18, 146],
+        [14.16, 147.64]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#22D3EE", "#7C3AED"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [95.3, 41.29],
+        [84.7, 49.35],
+        [89.21, 50.99],
+        [84.32, 58.58],
+        [95.95, 50.04],
+        [91.44, 48.39]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FDE047", "#F59E0B"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10.34, 48.17],
+        [18.31, 53.35],
+        [13.66, 63.83],
+        [5.16, 56.15]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#F43F5E", "#7C3AED"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10.34, 48.17],
+        [18.31, 53.35],
+        [5.16, 56.15]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#FFFFFF", "#F43F5E"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [77.11, 154.17],
+        [78.85, 144.32],
+        [82.9, 150.12],
+        [89.04, 144.09],
+        [92.75, 151.85],
+        [98.54, 147.8],
+        [96.81, 157.65]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE047", "#B45309"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 87.84,
+      "y": 142.89,
+      "w": 2.4,
+      "fill": {
+        "type": "solid",
+        "color": "#F43F5E"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 77.17,
+      "y": 153.73,
+      "w": 20,
+      "h": 2,
+      "radius": 0.6,
+      "rotate": 10,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FBBF24", "#B45309"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7.4,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "accentColor": "#FDE047",
+      "stroke": "#12031F",
+      "strokeWidth": 0.6,
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#FBCFE8"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "left",
+      "x": 10,
+      "y": 34,
+      "w": 66,
+      "rotate": -6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#050010",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "right"
+        }
+      ],
+      "cutGlow": "#FDE047",
+      "frameStyle": "dark"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "right",
+      "x": 25,
+      "y": 47,
+      "w": 66,
+      "rotate": 6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#050010",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "left"
+        }
+      ],
+      "cutGlow": "#FDE047",
+      "frameStyle": "dark",
+      "gloss": true
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "left": {
+        "frame": "tablet-generic",
+        "x": 8,
+        "y": 38,
+        "w": 72
+      },
+      "right": {
+        "frame": "tablet-generic",
+        "x": 20,
+        "y": 52,
+        "w": 72
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

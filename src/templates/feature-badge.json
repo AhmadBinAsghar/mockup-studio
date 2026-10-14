@@ -1,0 +1,144 @@
+{
+  "id": "feature-badge",
+  "name": "Feature Badge",
+  "category": "general",
+  "description": "Headline plus three feature bullets over a light canvas, with a tilted glossy phone.",
+  "thumbnail": "/templates/feature-badge.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["{brand-pale}", "#FFFFFF"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 42,
+      "y": 76,
+      "w": 72,
+      "fill": {
+        "type": "gradient",
+        "angle": 150,
+        "stops": ["{brand-light}", "{brand}"]
+      },
+      "opacity": 0.28
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 1,
+      "y": 133,
+      "w": 34,
+      "fill": {
+        "type": "gradient",
+        "angle": 150,
+        "stops": ["{brand-pop}", "{brand-glow}"]
+      },
+      "opacity": 0.35
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90, 58],
+        [90.8, 61.2],
+        [94, 62],
+        [90.8, 62.8],
+        [90, 66],
+        [89.2, 62.8],
+        [86, 62],
+        [89.2, 61.2]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand}"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [8, 69.4],
+        [8.52, 71.48],
+        [10.6, 72],
+        [8.52, 72.52],
+        [8, 74.6],
+        [7.48, 72.52],
+        [5.4, 72],
+        [7.48, 71.48]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-pop}"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [84, 165.6],
+        [84.48, 167.52],
+        [86.4, 168],
+        [84.48, 168.48],
+        [84, 170.4],
+        [83.52, 168.48],
+        [81.6, 168],
+        [83.52, 167.52]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-glow}"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 6,
+      "w": 84,
+      "fontSize": 6.8,
+      "weight": 800,
+      "align": "center",
+      "color": "{brand-deep}",
+      "accentColor": "{brand}"
+    },
+    {
+      "type": "bullets",
+      "x": 14,
+      "y": 23,
+      "w": 76,
+      "fontSize": 3.6,
+      "color": "{brand-deep}",
+      "iconColor": "{brand}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 25,
+      "y": 47,
+      "w": 54,
+      "rotate": -8,
+      "depth": 1.4,
+      "depthAngle": 80,
+      "depthColor": "{brand-dark}",
+      "frameStyle": "white",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

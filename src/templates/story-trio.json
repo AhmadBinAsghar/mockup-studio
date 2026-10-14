@@ -1,0 +1,135 @@
+{
+  "id": "story-trio",
+  "name": "Story Trio",
+  "category": "general",
+  "description": "Three phones tell the story: the previous screenshot, this one, and the next, fanned out over a glowing stage.",
+  "thumbnail": "/templates/story-trio.png",
+  "background": {
+    "type": "gradient",
+    "angle": 170,
+    "stops": ["{brand}", "{brand-deep}"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -20,
+      "y": 42,
+      "w": 140,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.5
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 2,
+      "y": 62,
+      "w": 96,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.4,
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -14,
+      "y": 46,
+      "w": 128,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.3,
+      "opacity": 0.1
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pale}",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 23.5,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "left",
+      "x": -14,
+      "y": 52,
+      "w": 52,
+      "rotate": -13,
+      "show": "prev",
+      "dim": 0.4,
+      "frameStyle": "dark"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "right",
+      "x": 62,
+      "y": 52,
+      "w": 52,
+      "rotate": 13,
+      "show": "next",
+      "dim": 0.4,
+      "frameStyle": "dark"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "center",
+      "x": 23,
+      "y": 38,
+      "w": 54,
+      "depth": 1.4,
+      "depthAngle": 90,
+      "depthColor": "{brand-deep}",
+      "frameStyle": "silver",
+      "gloss": true
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "left": {
+        "frame": "tablet-generic",
+        "x": -18,
+        "y": 56,
+        "w": 62
+      },
+      "right": {
+        "frame": "tablet-generic",
+        "x": 56,
+        "y": 56,
+        "w": 62
+      },
+      "center": {
+        "frame": "tablet-generic",
+        "x": 18,
+        "y": 44,
+        "w": 64
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

@@ -1,0 +1,298 @@
+{
+  "id": "power-split",
+  "name": "Power Split",
+  "category": "fitness",
+  "description": "Black against electric blue with lime slashes cut across the seam of a phone split in two.",
+  "themeColor": "#A3E635",
+  "thumbnail": "/templates/power-split.png",
+  "background": {
+    "type": "solid",
+    "color": "#050505"
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 0],
+        [54, 0],
+        [44, 100],
+        [0, 100]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#050505"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [54, 0],
+        [100, 0],
+        [100, 100],
+        [44, 100]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#0891B2", "#4F46E5"]
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [20.62, 130.33],
+        [74.62, 30.33],
+        [73.38, 29.67],
+        [19.38, 129.67]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#A3E635"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [34.52, 150.3],
+        [90.52, 52.3],
+        [89.48, 51.7],
+        [33.48, 149.7]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#A3E635"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-5.58, 100.27],
+        [46.42, 18.27],
+        [45.58, 17.73],
+        [-6.42, 99.73]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#A3E635"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [54.44, 85.7],
+        [44.13, 96.1],
+        [49.3, 97.2],
+        [45.13, 106.21],
+        [56.48, 95.13],
+        [51.32, 94.03]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#A3E635", "#65A30D"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 3,
+      "y": 148.9,
+      "w": 22,
+      "h": 2.2,
+      "radius": 1.1,
+      "rotate": -14,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#E5E7EB", "#6B7280"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 5.2,
+      "y": 145.65,
+      "w": 3.08,
+      "h": 12.32,
+      "radius": 0.88,
+      "rotate": -14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#A3E635", "#4D7C0F"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 19.72,
+      "y": 142.03,
+      "w": 3.08,
+      "h": 12.32,
+      "radius": 0.88,
+      "rotate": -14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#A3E635", "#4D7C0F"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 3.08,
+      "y": 148.27,
+      "w": 2.2,
+      "h": 8.36,
+      "radius": 0.66,
+      "rotate": -14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#A3E635", "#4D7C0F"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 22.72,
+      "y": 143.37,
+      "w": 2.2,
+      "h": 8.36,
+      "radius": 0.66,
+      "rotate": -14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#A3E635", "#4D7C0F"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7.2,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "accentColor": "#A3E635",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#BAE6FD"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "left",
+      "x": 10,
+      "y": 47,
+      "w": 66,
+      "rotate": -6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#000000",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "right"
+        }
+      ],
+      "cutGlow": "#A3E635",
+      "frameStyle": "dark"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "right",
+      "x": 25,
+      "y": 34,
+      "w": 66,
+      "rotate": 6,
+      "depth": 1.8,
+      "depthAngle": 90,
+      "depthColor": "#000000",
+      "cuts": [
+        {
+          "x1": 0.5,
+          "y1": -0.1,
+          "x2": 0.5,
+          "y2": 1.1,
+          "keep": "left"
+        }
+      ],
+      "cutGlow": "#A3E635",
+      "frameStyle": "dark",
+      "gloss": true
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "left": {
+        "frame": "tablet-generic",
+        "x": 8,
+        "y": 52,
+        "w": 72
+      },
+      "right": {
+        "frame": "tablet-generic",
+        "x": 20,
+        "y": 38,
+        "w": 72
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

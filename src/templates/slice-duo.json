@@ -1,0 +1,170 @@
+{
+  "id": "slice-duo",
+  "name": "Slice Duo",
+  "category": "general",
+  "description": "The phone is sliced on a diagonal; both halves slide apart with a neon edge and each shows its half of your screenshot.",
+  "thumbnail": "/templates/slice-duo.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#05030F", "{brand-deep}"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -50,
+      "y": -13,
+      "w": 150,
+      "fill": {
+        "type": "radial",
+        "color": "{brand}"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 18.5,
+      "y": 57.5,
+      "w": 95,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-pop}"
+      },
+      "opacity": 0.5
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [80, 26.6],
+        [80.68, 29.32],
+        [83.4, 30],
+        [80.68, 30.68],
+        [80, 33.4],
+        [79.32, 30.68],
+        [76.6, 30],
+        [79.32, 29.32]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-pop}"
+      },
+      "opacity": 0.9
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [8, 101.6],
+        [8.48, 103.52],
+        [10.4, 104],
+        [8.48, 104.48],
+        [8, 106.4],
+        [7.52, 104.48],
+        [5.6, 104],
+        [7.52, 103.52]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-glow}"
+      },
+      "opacity": 0.9
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pop}"
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "top",
+      "x": 26,
+      "y": 35,
+      "w": 58,
+      "rotate": -9,
+      "depth": 1.6,
+      "depthAngle": 100,
+      "depthColor": "#0A0A12",
+      "cuts": [
+        {
+          "x1": -0.15,
+          "y1": 0.62,
+          "x2": 1.15,
+          "y2": 0.4,
+          "keep": "left"
+        }
+      ],
+      "cutGlow": "{brand-pop}",
+      "gloss": true
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "bottom",
+      "x": 14,
+      "y": 47,
+      "w": 58,
+      "rotate": -9,
+      "depth": 1.6,
+      "depthAngle": 100,
+      "depthColor": "#0A0A12",
+      "cuts": [
+        {
+          "x1": -0.15,
+          "y1": 0.62,
+          "x2": 1.15,
+          "y2": 0.4,
+          "keep": "right"
+        }
+      ],
+      "cutGlow": "{brand-pop}"
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "top": {
+        "frame": "tablet-generic",
+        "x": 22,
+        "y": 39,
+        "w": 66
+      },
+      "bottom": {
+        "frame": "tablet-generic",
+        "x": 10,
+        "y": 51,
+        "w": 66
+      }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

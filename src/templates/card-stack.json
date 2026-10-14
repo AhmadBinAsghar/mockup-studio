@@ -1,0 +1,116 @@
+{
+  "id": "card-stack",
+  "name": "Card Stack",
+  "category": "general",
+  "description": "A tilted phone on the right with three frosted-glass feature cards stacked beside it, each with a numbered badge.",
+  "thumbnail": "/templates/card-stack.png",
+  "background": { "type": "gradient", "angle": 155, "stops": ["{brand-dark}", "#070711"] },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -40,
+      "y": -20,
+      "w": 120,
+      "fill": { "type": "radial", "color": "{brand}" },
+      "opacity": 0.7
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 40,
+      "y": 60,
+      "w": 100,
+      "fill": { "type": "radial", "color": "{brand-glow}" },
+      "opacity": 0.4,
+      "blend": "screen"
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 6,
+      "y": 7,
+      "w": 88,
+      "fontSize": 7.4,
+      "weight": 800,
+      "align": "left",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pop}",
+      "shadow": true,
+      "maxLines": 2
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 6,
+      "y": 24,
+      "w": 82,
+      "fontSize": 3.2,
+      "align": "left",
+      "color": "{brand-pale}",
+      "maxLines": 2
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "id": "phone",
+      "x": 46,
+      "y": 40,
+      "w": 50,
+      "rotate": 4,
+      "shadow": true,
+      "bleed": true,
+      "frameStyle": "titanium",
+      "gloss": true,
+      "rim": "{brand-pop}",
+      "depth": 1.4,
+      "depthAngle": 80,
+      "depthColor": "#05050A"
+    },
+    {
+      "type": "callout",
+      "id": "card1",
+      "index": 0,
+      "x": 4,
+      "y": 48,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "glass",
+      "icon": "number",
+      "accentColor": "{brand-pop}"
+    },
+    {
+      "type": "callout",
+      "id": "card2",
+      "index": 1,
+      "x": 4,
+      "y": 80,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "glass",
+      "icon": "number",
+      "accentColor": "{brand-pop}"
+    },
+    {
+      "type": "callout",
+      "id": "card3",
+      "index": 2,
+      "x": 4,
+      "y": 112,
+      "w": 37,
+      "fontSize": 3.2,
+      "look": "glass",
+      "icon": "number",
+      "accentColor": "{brand-pop}"
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "card1": { "x": 4, "y": 36, "w": 38 },
+      "card2": { "x": 4, "y": 64, "w": 38 },
+      "card3": { "x": 4, "y": 92, "w": 38 },
+      "phone": { "frame": "tablet-generic", "x": 48, "y": 32, "w": 48 }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

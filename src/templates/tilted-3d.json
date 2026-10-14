@@ -1,0 +1,161 @@
+{
+  "id": "tilted-3d",
+  "name": "Tilted 3D",
+  "category": "general",
+  "description": "A thick silver phone leaning into the frame with a giant outlined echo of your headline behind it.",
+  "thumbnail": "/templates/tilted-3d.png",
+  "background": {
+    "type": "gradient",
+    "angle": 160,
+    "stops": ["{brand}", "{brand-deep}"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 35,
+      "y": -5,
+      "w": 90,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-glow}"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -40,
+      "y": 70,
+      "w": 100,
+      "fill": {
+        "type": "radial",
+        "color": "{brand-shift}"
+      },
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-7.27, 175.33],
+        [62.73, 20.33],
+        [61.27, 19.67],
+        [-8.73, 174.67]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [6.63, 178.3],
+        [78.63, 26.3],
+        [77.37, 25.7],
+        [5.37, 177.7]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [22.54, 180.27],
+        [96.54, 30.27],
+        [95.46, 29.73],
+        [21.46, 179.73]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-13.54, 150.19],
+        [44.46, 10.19],
+        [43.54, 9.81],
+        [-14.46, 149.81]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "{brand-light}"
+      },
+      "opacity": 0.16
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 60,
+      "y": 128,
+      "w": 44,
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.5,
+      "opacity": 0.22
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 78,
+      "fontSize": 7.4,
+      "weight": 800,
+      "align": "left",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pale}",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 8,
+      "y": 25.5,
+      "w": 66,
+      "fontSize": 3.3,
+      "align": "left",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 22,
+      "y": 40,
+      "w": 60,
+      "rotate": -13,
+      "skewY": 5,
+      "depth": 3.6,
+      "depthAngle": 75,
+      "depthColor": "{brand-dark}",
+      "frameStyle": "silver",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

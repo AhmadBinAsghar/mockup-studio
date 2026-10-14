@@ -1,0 +1,124 @@
+{
+  "id": "card-row",
+  "name": "Card Row",
+  "category": "general",
+  "description": "Headline, then three white feature cards in a row above a centered phone. Great for listing 3 key benefits.",
+  "thumbnail": "/templates/card-row.png",
+  "background": { "type": "gradient", "angle": 170, "stops": ["{brand}", "{brand-deep}"] },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -30,
+      "y": 52,
+      "w": 160,
+      "fill": { "type": "radial", "color": "{brand-light}" },
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 52,
+      "y": -14,
+      "w": 62,
+      "fill": { "type": "radial", "color": "{brand-glow}" },
+      "opacity": 0.35,
+      "blend": "screen"
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 15,
+      "y": 166,
+      "w": 70,
+      "h": 7,
+      "fill": { "type": "solid", "color": "#000000" },
+      "opacity": 0.22
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 6,
+      "w": 84,
+      "fontSize": 7.2,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pale}",
+      "shadow": true,
+      "maxLines": 2
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 12,
+      "y": 22,
+      "w": 76,
+      "fontSize": 3.2,
+      "align": "center",
+      "color": "{brand-pale}",
+      "maxLines": 2
+    },
+    {
+      "type": "callout",
+      "id": "card1",
+      "index": 0,
+      "x": 3.5,
+      "y": 32,
+      "w": 29,
+      "fontSize": 3,
+      "look": "solid",
+      "accentColor": "{brand}",
+      "color": "{brand-deep}"
+    },
+    {
+      "type": "callout",
+      "id": "card2",
+      "index": 1,
+      "x": 35.5,
+      "y": 32,
+      "w": 29,
+      "fontSize": 3,
+      "look": "solid",
+      "accentColor": "{brand}",
+      "color": "{brand-deep}"
+    },
+    {
+      "type": "callout",
+      "id": "card3",
+      "index": 2,
+      "x": 67.5,
+      "y": 32,
+      "w": 29,
+      "fontSize": 3,
+      "look": "solid",
+      "accentColor": "{brand}",
+      "color": "{brand-deep}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "id": "phone",
+      "x": 24,
+      "y": 59,
+      "w": 52,
+      "shadow": true,
+      "bleed": false,
+      "frameStyle": "silver",
+      "gloss": true,
+      "depth": 1,
+      "depthAngle": 90,
+      "depthColor": "{brand-deep}"
+    }
+  ],
+  "tabletOverrides": {
+    "layers": {
+      "card1": { "y": 29 },
+      "card2": { "y": 29 },
+      "card3": { "y": 29 },
+      "phone": { "frame": "tablet-generic", "x": 25, "y": 56, "w": 50 }
+    }
+  },
+  "supports": ["phone", "tablet"]
+}

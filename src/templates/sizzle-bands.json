@@ -1,0 +1,623 @@
+{
+  "id": "sizzle-bands",
+  "name": "Sizzle Bands",
+  "category": "food",
+  "description": "Fiery diagonal color bands splashing behind a phone, with sparks of spice flying everywhere.",
+  "themeColor": "#DC2626",
+  "thumbnail": "/templates/sizzle-bands.png",
+  "background": {
+    "type": "solid",
+    "color": "#1A0707"
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 26],
+        [100, 40],
+        [100, 56],
+        [0, 42]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#DC2626"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 44],
+        [100, 58],
+        [100, 66],
+        [0, 52]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 54],
+        [100, 68],
+        [100, 72],
+        [0, 58]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "paintsBackground": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 70.14,
+      "y": 34.42,
+      "w": 1.99,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 74.21,
+      "y": 96.33,
+      "w": 2.07,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 26.59,
+      "y": 106.68,
+      "w": 1.37,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 69.12,
+      "y": 95.34,
+      "w": 2.8,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 32.27,
+      "y": 125.89,
+      "w": 1.59,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 51.44,
+      "y": 145.34,
+      "w": 2.2,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 84.65,
+      "y": 71.88,
+      "w": 3.15,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 41.74,
+      "y": 129.42,
+      "w": 1.27,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 70.92,
+      "y": 29.74,
+      "w": 0.92,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 83.59,
+      "y": 113.15,
+      "w": 2.54,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 57.56,
+      "y": 110.91,
+      "w": 1.07,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 52.02,
+      "y": 146.45,
+      "w": 1.89,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 48.31,
+      "y": 108.54,
+      "w": 2.76,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 64.53,
+      "y": 80.84,
+      "w": 2.55,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 45.26,
+      "y": 165.53,
+      "w": 3.01,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 65.64,
+      "y": 162,
+      "w": 2.74,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 6.86,
+      "y": 103.77,
+      "w": 2.98,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 52.85,
+      "y": 69.58,
+      "w": 2.01,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 56.11,
+      "y": 83.4,
+      "w": 2.71,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 92.1,
+      "y": 118.68,
+      "w": 2.7,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 7.23,
+      "y": 87.11,
+      "w": 1.27,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 74.66,
+      "y": 115.33,
+      "w": 3.27,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 94.6,
+      "y": 110.08,
+      "w": 3.03,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 78.9,
+      "y": 73.05,
+      "w": 2.4,
+      "fill": {
+        "type": "solid",
+        "color": "#EF4444"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 38.91,
+      "y": 113.22,
+      "w": 1.24,
+      "fill": {
+        "type": "solid",
+        "color": "#FACC15"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 53.04,
+      "y": 64.39,
+      "w": 3.01,
+      "fill": {
+        "type": "solid",
+        "color": "#F97316"
+      },
+      "opacity": 0.85
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [10.09, 33.17],
+        [12.94, 36.68],
+        [17.1, 39.97],
+        [19.67, 44.43],
+        [19.21, 49.43],
+        [15.92, 53.58],
+        [11.59, 54.35],
+        [7.08, 51.57],
+        [4.94, 47.03],
+        [6.42, 42.75],
+        [8.64, 40.13],
+        [8.1, 37.09]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F97316", "#DC2626"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [11.54, 41.4],
+        [14.24, 44.05],
+        [16.45, 47.68],
+        [15.18, 51.93],
+        [11.72, 52.54],
+        [9.08, 48.98],
+        [9.91, 44.82]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE047", "#FB923C"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [73.96, 141.49],
+        [74.65, 144.38],
+        [75.43, 147.25],
+        [76.3, 150.03],
+        [77.29, 152.67],
+        [78.43, 155.11],
+        [79.74, 157.31],
+        [81.28, 159.21],
+        [83.07, 160.74],
+        [85.11, 161.76],
+        [87.27, 162.2],
+        [89.42, 162.06],
+        [91.49, 161.44],
+        [93.49, 160.45],
+        [95.47, 159.16],
+        [97.47, 157.6],
+        [99.49, 155.83],
+        [99.22, 155.44],
+        [96.83, 156.58],
+        [94.59, 157.48],
+        [92.53, 158.07],
+        [90.73, 158.32],
+        [89.25, 158.23],
+        [88.13, 157.86],
+        [87.31, 157.29],
+        [86.65, 156.53],
+        [86.02, 155.5],
+        [85.39, 154.13],
+        [84.79, 152.39],
+        [84.21, 150.33],
+        [83.67, 147.97],
+        [83.14, 145.37],
+        [82.62, 142.61],
+        [82.05, 139.74]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#EF4444", "#B91C1C"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 74.97,
+      "y": 138.39,
+      "w": 4.8,
+      "h": 2.7,
+      "radius": 1.2,
+      "rotate": -10,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#4ADE80", "#15803D"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-1.82, 155.39],
+        [0.38, 156.74],
+        [2.61, 158.02],
+        [4.85, 159.19],
+        [7.07, 160.2],
+        [9.27, 161],
+        [11.42, 161.54],
+        [13.53, 161.77],
+        [15.56, 161.6],
+        [17.44, 160.98],
+        [19.03, 159.92],
+        [20.26, 158.52],
+        [21.15, 156.88],
+        [21.77, 155.04],
+        [22.19, 153.03],
+        [22.46, 150.86],
+        [22.62, 148.53],
+        [22.21, 148.45],
+        [21.45, 150.62],
+        [20.62, 152.55],
+        [19.72, 154.17],
+        [18.77, 155.43],
+        [17.81, 156.28],
+        [16.9, 156.74],
+        [16.04, 156.89],
+        [15.17, 156.83],
+        [14.15, 156.58],
+        [12.93, 156.13],
+        [11.5, 155.44],
+        [9.88, 154.52],
+        [8.1, 153.41],
+        [6.19, 152.14],
+        [4.17, 150.77],
+        [2.07, 149.36]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#EF4444", "#B91C1C"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": -2.88,
+      "y": 151.06,
+      "w": 4.16,
+      "h": 2.34,
+      "radius": 1.04,
+      "rotate": -55,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#4ADE80", "#15803D"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": -6,
+      "y": 78,
+      "w": 112,
+      "fontSize": 24,
+      "weight": 800,
+      "align": "center",
+      "color": "transparent",
+      "id": "ghost",
+      "stroke": "#FFFFFF",
+      "strokeWidth": 0.3,
+      "opacity": 0.16,
+      "uppercase": true,
+      "rotate": -6,
+      "maxLines": 2,
+      "hideOnWide": true
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7.4,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "accentColor": "#FDE047",
+      "uppercase": true,
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#FECACA"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 16,
+      "y": 40,
+      "w": 68,
+      "rotate": 8,
+      "depth": 1.8,
+      "depthAngle": 100,
+      "depthColor": "#2A0707",
+      "frameStyle": "dark",
+      "gloss": true,
+      "rim": "#F97316"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

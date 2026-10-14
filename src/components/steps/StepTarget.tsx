@@ -1,0 +1,196 @@
+"use client";
+
+import { useState } from "react";
+
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import {
+  CUSTOM_MAX,
+  CUSTOM_MIN,
+  NOT_STORE_SIZE_NOTE,
+  presetsForStore,
+  STORE_LABELS,
+  validateCustomSize,
+  type StoreId,
+} from "@/config/storePresets";
+import { isCustomNonStore } from "@/validation/checks";
+import { useProject } from "@/store/useProject";
+
+import { Notice } from "@/components/shared/form";
+
+function StoreGroup({ store }: { store: StoreId }) {
+  const { presetIds, togglePreset, setPresets } = useProject();
+  const presets = presetsForStore(store);
+  const ids = presets.map((p) => p.id);
+  const allOn = ids.every((id) => presetIds.includes(id));
+  const toggleAll = () =>
+    setPresets(allOn ? presetIds.filter((id) => !ids.includes(id)) : [...new Set([...presetIds, ...ids])]);
+
+  return (
+    <Card size="sm">
+      <CardHeader className="flex-row items-center justify-between">
+        <CardTitle>{STORE_LABELS[store]}</CardTitle>
+        <Button variant="ghost" size="sm" onClick={toggleAll}>
+          {allOn ? "Clear all" : "Select all"}
+        </Button>
+      </CardHeader>
+      <CardContent>
+        <ul className="flex flex-col gap-3">
+          {presets.map((p) => (
+            <li key={p.id} className="flex items-start gap-2">
+              <Checkbox
+                id={p.id}
+                className="mt-0.5"
+                checked={presetIds.includes(p.id)}
+                onCheckedChange={() => togglePreset(p.id)}
+              />
+              <Label htmlFor={p.id} className="flex flex-col items-start gap-0.5 font-normal">
+                <span>
+                  <span className="font-medium">{p.label}</span>{" "}
+                  <span className="text-muted-foreground">
+                    {p.width} × {p.height}
+                  </span>{" "}
+                  {p.required && <Badge variant="secondary">required</Badge>}
+                </span>
+                <span className="text-xs text-muted-foreground">{p.rules}</span>
+              </Label>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
+
+function SizeInput({
+  id,
+  label,
+  value,
+  onChange,
+  className,
+  numeric = true,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  className: string;
+  numeric?: boolean;
+}) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <Label htmlFor={id}>{label}</Label>
+      <Input
+        id={id}
+        className={className}
+        inputMode={numeric ? "numeric" : undefined}
+        min={numeric ? CUSTOM_MIN : undefined}
+        max={numeric ? CUSTOM_MAX : undefined}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+      />
+    </div>
+  );
+}
+
+function CustomSizes() {
+  const { customSizes, addCustomSize, removeCustomSize } = useProject();
+  const [width, setWidth] = useState("1600");
+  const [height, setHeight] = useState("3200");
+  const [label, setLabel] = useState("");
+  const [error, setError] = useState<string | null>(null);
+
+  function add() {
+    const w = Number(width);
+    const h = Number(height);
+    const problem = validateCustomSize(w, h);
+    setError(problem);
+    if (problem) return;
+    addCustomSize({ id: crypto.randomUUID(), width: w, height: h, label: label.trim() });
+    setLabel("");
+  }
+
+  return (
+    <Card size="sm">
+      <CardHeader>
+        <CardTitle>Custom dimensions</CardTitle>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-3">
+        <div className="flex flex-wrap items-end gap-2">
+          <SizeInput id="custom-w" label="Width (px)" className="w-24" value={width} onChange={setWidth} />
+          <SizeInput id="custom-h" label="Height (px)" className="w-24" value={height} onChange={setHeight} />
+          <SizeInput
+            id="custom-label"
+            label="Label (optional)"
+            className="w-36"
+            value={label}
+            onChange={setLabel}
+            numeric={false}
+          />
+          <Button variant="outline" onClick={add}>
+            Add
+          </Button>
+        </div>
+        {error && <p className="text-xs text-destructive">{error}</p>}
+        <ul className="flex flex-col gap-2">
+          {customSizes.map((c) => (
+            <li
+              key={c.id}
+              className="flex items-center justify-between gap-2 rounded-lg bg-muted px-3 py-2 text-sm"
+            >
+              <span>
+                {c.label && <strong>{c.label} </strong>}
+                {c.width} × {c.height}
+                {isCustomNonStore(c) && (
+                  <span className="block text-xs text-sky-700 dark:text-sky-300">{NOT_STORE_SIZE_NOTE}</span>
+                )}
+              </span>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-destructive"
+                onClick={() => removeCustomSize(c.id)}
+              >
+                Remove
+              </Button>
+            </li>
+          ))}
+        </ul>
+      </CardContent>
+    </Card>
+  );
+}
+
+function LandscapeToggle() {
+  const { landscape, setLandscape } = useProject();
+  return (
+    <div className="flex items-center gap-2 rounded-xl border bg-card px-4 py-3">
+      <Checkbox id="landscape" checked={landscape} onCheckedChange={(c) => setLandscape(c === true)} />
+      <Label htmlFor="landscape" className="flex flex-col items-start gap-0.5 font-normal">
+        <span className="font-medium">Also export landscape variants</span>
+        <span className="text-xs text-muted-foreground">
+          Every selected size is also rendered rotated (folders end in -landscape).
+        </span>
+      </Label>
+    </div>
+  );
+}
+
+export function StepTarget() {
+  return (
+    <div className="flex flex-col gap-4">
+      <Notice tone="info">
+        Pick Google Play, App Store, or both, plus any device sizes. Each slide is rendered at every size you
+        tick.
+      </Notice>
+      <StoreGroup store="google-play" />
+      <StoreGroup store="app-store" />
+      <LandscapeToggle />
+      <CustomSizes />
+    </div>
+  );
+}

@@ -1,0 +1,137 @@
+{
+  "id": "isometric-slab",
+  "name": "Isometric Slab",
+  "category": "general",
+  "description": "A thick isometric phone floating among glowing blocks in your brand shades.",
+  "thumbnail": "/templates/isometric-slab.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["{brand-deep}", "#0B0B18"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -8,
+      "y": 44,
+      "w": 120,
+      "fill": {
+        "type": "radial",
+        "color": "{brand}"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 17,
+      "y": 153.5,
+      "w": 70,
+      "h": 9,
+      "fill": {
+        "type": "solid",
+        "color": "#000000"
+      },
+      "opacity": 0.35
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 4,
+      "y": 128,
+      "w": 17,
+      "h": 17,
+      "radius": 4,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["{brand}", "{brand-glow}"]
+      },
+      "rotate": 18,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 80,
+      "y": 30,
+      "w": 12,
+      "h": 12,
+      "radius": 3,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["{brand-light}", "{brand-pop}"]
+      },
+      "rotate": -22,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 86,
+      "y": 120,
+      "w": 9,
+      "h": 9,
+      "radius": 2.5,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["{brand-shift}", "{brand}"]
+      },
+      "rotate": 30,
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 81,
+      "y": 75,
+      "w": 14,
+      "stroke": "{brand-pop}",
+      "strokeWidth": 0.7,
+      "opacity": 0.7
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "left",
+      "color": "#FFFFFF",
+      "accentColor": "{brand-pop}"
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 8,
+      "y": 25,
+      "w": 78,
+      "fontSize": 3.3,
+      "align": "left",
+      "color": "{brand-pale}"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 26,
+      "y": 38,
+      "w": 52,
+      "rotate": 14,
+      "skewY": -14,
+      "depth": 4.5,
+      "depthAngle": 62,
+      "depthColor": "{brand-light}",
+      "frameStyle": "dark",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

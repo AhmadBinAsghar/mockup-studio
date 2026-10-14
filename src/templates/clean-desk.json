@@ -1,0 +1,250 @@
+{
+  "id": "clean-desk",
+  "name": "Clean Desk",
+  "category": "office",
+  "description": "Swiss-style minimal: oversized left-aligned type, hairline rules, a teal disc and a silver phone sliding off the page.",
+  "themeColor": "#14B8A6",
+  "thumbnail": "/templates/clean-desk.png",
+  "background": {
+    "type": "solid",
+    "color": "#F4F6F8"
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 44,
+      "y": 14,
+      "w": 96,
+      "fill": {
+        "type": "gradient",
+        "angle": 150,
+        "stops": ["#14B8A6", "#0F766E"]
+      },
+      "opacity": 0.95
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -10,
+      "y": 130,
+      "w": 40,
+      "fill": {
+        "type": "solid",
+        "color": "#CCFBF1"
+      },
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [8, 48.5],
+        [60, 48.5],
+        [60, 48.9],
+        [8, 48.9]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#0F172A"
+      },
+      "yUnit": "height",
+      "hideOnWide": true,
+      "opacity": 0.8
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 8.9,
+      "y": 44.9,
+      "w": 2.2,
+      "fill": {
+        "type": "solid",
+        "color": "#0F172A"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 14.4,
+      "y": 44.9,
+      "w": 2.2,
+      "fill": {
+        "type": "solid",
+        "color": "#14B8A6"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 19.9,
+      "y": 44.9,
+      "w": 2.2,
+      "fill": {
+        "type": "solid",
+        "color": "#F59E0B"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 9.1,
+      "y": 143.56,
+      "w": 9.8,
+      "h": 12.88,
+      "radius": 0.84,
+      "rotate": -8,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FFFFFF", "#E2E8F0"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 10.23,
+      "y": 145.63,
+      "w": 6.44,
+      "h": 0.98,
+      "radius": 0.42,
+      "rotate": -8,
+      "fill": {
+        "type": "solid",
+        "color": "#14B8A6"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 10.59,
+      "y": 148.19,
+      "w": 6.44,
+      "h": 0.84,
+      "radius": 0.42,
+      "rotate": -8,
+      "fill": {
+        "type": "solid",
+        "color": "#CBD5E1"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 10.9,
+      "y": 150.41,
+      "w": 6.44,
+      "h": 0.84,
+      "radius": 0.42,
+      "rotate": -8,
+      "fill": {
+        "type": "solid",
+        "color": "#CBD5E1"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 11.22,
+      "y": 152.75,
+      "w": 4.76,
+      "h": 0.84,
+      "radius": 0.42,
+      "rotate": -8,
+      "fill": {
+        "type": "solid",
+        "color": "#CBD5E1"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 25.38,
+      "y": 156.88,
+      "w": 2.64,
+      "h": 4.4,
+      "radius": 0.44,
+      "rotate": 0,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#14B8A6", "#0F766E"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 28.68,
+      "y": 154.02,
+      "w": 2.64,
+      "h": 7.26,
+      "radius": 0.44,
+      "rotate": 0,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#14B8A6", "#0F766E"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 31.98,
+      "y": 150.94,
+      "w": 2.64,
+      "h": 10.12,
+      "radius": 0.44,
+      "rotate": 0,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#14B8A6", "#0F766E"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 62,
+      "fontSize": 9,
+      "weight": 900,
+      "align": "left",
+      "color": "#0F172A",
+      "accentColor": "#0D9488",
+      "maxLines": 3
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 8,
+      "y": 36,
+      "w": 52,
+      "fontSize": 3.2,
+      "align": "left",
+      "color": "#475569"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 38,
+      "y": 58,
+      "w": 66,
+      "rotate": 8,
+      "frameStyle": "silver",
+      "gloss": true,
+      "depth": 1,
+      "depthAngle": 90,
+      "depthColor": "#94A3B8"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

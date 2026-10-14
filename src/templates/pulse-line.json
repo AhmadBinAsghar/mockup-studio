@@ -1,0 +1,371 @@
+{
+  "id": "pulse-line",
+  "name": "Pulse Line",
+  "category": "fitness",
+  "description": "A glowing heartbeat line runs through the dark behind a pink-rimmed phone.",
+  "themeColor": "#EC4899",
+  "thumbnail": "/templates/pulse-line.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#12020F", "#2A0430"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -15,
+      "y": 35,
+      "w": 130,
+      "fill": {
+        "type": "radial",
+        "color": "#EC4899"
+      },
+      "opacity": 0.45
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-4, 102.5],
+        [20, 102.5],
+        [28, 101.5],
+        [29.95, 85.43],
+        [38.88, 122.24],
+        [50.1, 93.36],
+        [51.88, 102.24],
+        [64, 102.5],
+        [71.6, 101.92],
+        [74.61, 92.08],
+        [80.23, 109.77],
+        [86.85, 102.35],
+        [104, 102.5],
+        [104, 97.5],
+        [85.15, 97.65],
+        [83.77, 106.23],
+        [77.39, 87.92],
+        [68.4, 98.08],
+        [64, 97.5],
+        [54.12, 97.76],
+        [45.9, 90.64],
+        [41.12, 117.76],
+        [34.05, 82.57],
+        [24, 98.5],
+        [20, 97.5],
+        [-4, 97.5]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#EC4899"
+      },
+      "opacity": 0.25
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-4, 101.2],
+        [20, 101.2],
+        [26.96, 100.72],
+        [31.02, 84.69],
+        [39.46, 121.07],
+        [49.01, 92.65],
+        [52.46, 101.07],
+        [64, 101.2],
+        [70.77, 100.92],
+        [75.33, 91],
+        [81.15, 108.85],
+        [86.41, 101.13],
+        [104, 101.2],
+        [104, 98.8],
+        [85.59, 98.87],
+        [82.85, 107.15],
+        [76.67, 89],
+        [69.23, 99.08],
+        [64, 98.8],
+        [53.54, 98.93],
+        [46.99, 91.35],
+        [40.54, 118.93],
+        [32.98, 83.31],
+        [25.04, 99.28],
+        [20, 98.8],
+        [-4, 98.8]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#F472B6"
+      },
+      "opacity": 0.55
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [-4, 100.45],
+        [20, 100.45],
+        [26.36, 100.27],
+        [31.63, 84.26],
+        [39.8, 120.4],
+        [48.38, 92.25],
+        [52.8, 100.4],
+        [64, 100.45],
+        [70.29, 100.35],
+        [75.75, 90.37],
+        [81.68, 108.32],
+        [86.15, 100.42],
+        [104, 100.45],
+        [104, 99.55],
+        [85.85, 99.58],
+        [82.32, 107.68],
+        [76.25, 89.63],
+        [69.71, 99.65],
+        [64, 99.55],
+        [53.2, 99.6],
+        [47.62, 91.75],
+        [40.2, 119.6],
+        [32.37, 83.74],
+        [25.64, 99.73],
+        [20, 99.55],
+        [-4, 99.55]
+      ],
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "opacity": 0.9
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 25,
+      "y": 75,
+      "w": 50,
+      "stroke": "#EC4899",
+      "strokeWidth": 0.3,
+      "opacity": 0.2
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 12,
+      "y": 62,
+      "w": 76,
+      "stroke": "#EC4899",
+      "strokeWidth": 0.3,
+      "opacity": 0.17
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -1,
+      "y": 49,
+      "w": 102,
+      "stroke": "#EC4899",
+      "strokeWidth": 0.3,
+      "opacity": 0.14
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -14,
+      "y": 36,
+      "w": 128,
+      "stroke": "#EC4899",
+      "strokeWidth": 0.3,
+      "opacity": 0.11000000000000001
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -27,
+      "y": 23,
+      "w": 154,
+      "stroke": "#EC4899",
+      "strokeWidth": 0.3,
+      "opacity": 0.08000000000000002
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 81.2,
+      "y": 31.77,
+      "w": 8,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 87.46,
+      "y": 33.1,
+      "w": 8,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [81.25, 35.91],
+        [95.02, 38.84],
+        [86.47, 45.2]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 3.44,
+      "y": 143.82,
+      "w": 7,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 8.88,
+      "y": 142.46,
+      "w": 7,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [3.89, 148.95],
+        [15.84, 145.97],
+        [11.56, 154.25]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90.97, 143.07],
+        [92.01, 145.76],
+        [93.88, 148.57],
+        [94.56, 151.77],
+        [93.3, 154.7],
+        [90.49, 156.57],
+        [87.72, 156.18],
+        [85.53, 153.61],
+        [85.13, 150.45],
+        [86.87, 148.15],
+        [88.73, 146.99],
+        [89, 145.05]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F97316", "#DC2626"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [90.23, 148.34],
+        [91.35, 150.47],
+        [91.97, 153.1],
+        [90.37, 155.42],
+        [88.15, 155.11],
+        [87.25, 152.44],
+        [88.57, 150.08]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE047", "#FB923C"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 6.8,
+      "weight": 800,
+      "align": "center",
+      "color": "#FFFFFF",
+      "uppercase": true,
+      "accentColor": "#F472B6",
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#FBCFE8"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 21,
+      "y": 38,
+      "w": 58,
+      "rotate": -8,
+      "depth": 1.4,
+      "depthAngle": 80,
+      "depthColor": "#12020F",
+      "frameStyle": "dark",
+      "gloss": true,
+      "rim": "#F472B6"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

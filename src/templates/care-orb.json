@@ -1,0 +1,312 @@
+{
+  "id": "care-orb",
+  "name": "Care Orb",
+  "category": "health",
+  "description": "A soft teal orb with a giant medical cross watermark behind a white phone, with hearts and pills floating around.",
+  "themeColor": "#0891B2",
+  "thumbnail": "/templates/care-orb.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#ECFEFF", "#FFFFFF"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -25,
+      "y": 29,
+      "w": 150,
+      "fill": {
+        "type": "radial",
+        "color": "#2DD4BF"
+      },
+      "opacity": 0.3
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 4,
+      "y": 58,
+      "w": 92,
+      "fill": {
+        "type": "gradient",
+        "angle": 150,
+        "stops": ["#2DD4BF", "#0891B2"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 41,
+      "y": 74,
+      "w": 18,
+      "h": 60,
+      "radius": 4,
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "opacity": 0.22
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 29,
+      "y": 95,
+      "w": 42,
+      "h": 18,
+      "radius": 4,
+      "fill": {
+        "type": "solid",
+        "color": "#FFFFFF"
+      },
+      "opacity": 0.22
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": -6,
+      "y": 48,
+      "w": 112,
+      "stroke": "#14B8A6",
+      "strokeWidth": 0.5,
+      "opacity": 0.4
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 3.57,
+      "y": 50.62,
+      "w": 9,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 10.56,
+      "y": 48.88,
+      "w": 9,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [4.14, 57.22],
+        [19.51, 53.39],
+        [14, 64.03]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FB7185", "#E11D48"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 76,
+      "y": 64.96,
+      "w": 24,
+      "h": 10.08,
+      "radius": 5.04,
+      "rotate": 38,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FFFFFF", "#E2E8F0"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 86.73,
+      "y": 68.65,
+      "w": 12,
+      "h": 10.08,
+      "radius": 5.04,
+      "rotate": 38,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#14B8A6", "#0F766E"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 87.34,
+      "y": 66.88,
+      "w": 6.24,
+      "h": 10.08,
+      "radius": 0,
+      "rotate": 38,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#14B8A6", "#0F766E"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 87.48,
+      "y": 133,
+      "w": 5.04,
+      "h": 14,
+      "radius": 1.4,
+      "rotate": 14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#38BDF8", "#0284C7"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 83,
+      "y": 137.48,
+      "w": 14,
+      "h": 5.04,
+      "radius": 1.4,
+      "rotate": 14,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#38BDF8", "#0284C7"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 5.33,
+      "y": 126.76,
+      "w": 9.8,
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#38BDF8", "#0369A1"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [9.03, 123.07],
+        [14.39, 131.08],
+        [6.07, 132.25]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 160,
+        "stops": ["#38BDF8", "#0369A1"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 4,
+      "y": 151.8,
+      "w": 20,
+      "h": 8.4,
+      "radius": 4.2,
+      "rotate": -28,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FFFFFF", "#E2E8F0"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 13.41,
+      "y": 149.45,
+      "w": 10,
+      "h": 8.4,
+      "radius": 4.2,
+      "rotate": -28,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F472B6", "#BE185D"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 13.7,
+      "y": 150.58,
+      "w": 5.2,
+      "h": 8.4,
+      "radius": 0,
+      "rotate": -28,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#F472B6", "#BE185D"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 7,
+      "w": 84,
+      "fontSize": 7,
+      "weight": 800,
+      "align": "center",
+      "color": "#0F3D4C",
+      "accentColor": "#0D9488"
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 24,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#476B77"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 22,
+      "y": 38,
+      "w": 56,
+      "rotate": 6,
+      "frameStyle": "white",
+      "gloss": true,
+      "depth": 1,
+      "depthAngle": 90,
+      "depthColor": "#CBD5E1"
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}

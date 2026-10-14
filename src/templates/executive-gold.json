@@ -1,0 +1,344 @@
+{
+  "id": "executive-gold",
+  "name": "Executive Gold",
+  "category": "office",
+  "description": "Black and gold luxury: a thick gold-framed phone, stacked coins and fine golden rules.",
+  "themeColor": "#F59E0B",
+  "thumbnail": "/templates/executive-gold.png",
+  "background": {
+    "type": "gradient",
+    "angle": 180,
+    "stops": ["#0A0A0C", "#1C1710"]
+  },
+  "layers": [
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 5,
+      "y": 41,
+      "w": 110,
+      "fill": {
+        "type": "radial",
+        "color": "#F59E0B"
+      },
+      "opacity": 0.28
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 0],
+        [100, 0],
+        [100, 0.5],
+        [0, 0.5]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#92400E", "#FDE68A"]
+      },
+      "yUnit": "height",
+      "hideOnWide": false
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [0, 99.5],
+        [100, 99.5],
+        [100, 100],
+        [0, 100]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#92400E"]
+      },
+      "yUnit": "height",
+      "hideOnWide": false
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [4, 3],
+        [96, 3],
+        [96, 3.25],
+        [4, 3.25]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#92400E", "#FDE68A"]
+      },
+      "yUnit": "height",
+      "hideOnWide": false,
+      "opacity": 0.6
+    },
+    {
+      "type": "shape",
+      "shape": "polygon",
+      "x": 0,
+      "y": 0,
+      "w": 100,
+      "points": [
+        [4, 96.75],
+        [96, 96.75],
+        [96, 97],
+        [4, 97]
+      ],
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#92400E", "#FDE68A"]
+      },
+      "yUnit": "height",
+      "hideOnWide": false,
+      "opacity": 0.6
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 12,
+      "y": 155.5,
+      "w": 76,
+      "h": 9,
+      "fill": {
+        "type": "solid",
+        "color": "#000000"
+      },
+      "opacity": 0.5
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 71,
+      "y": 156.8,
+      "w": 22,
+      "h": 6.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 71,
+      "y": 153.6,
+      "w": 22,
+      "h": 6.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      },
+      "shadow": false
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 71,
+      "y": 150.4,
+      "w": 22,
+      "h": 6.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      },
+      "shadow": false
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 71,
+      "y": 147.2,
+      "w": 22,
+      "h": 6.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      },
+      "shadow": false
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 7,
+      "y": 159.3,
+      "w": 18,
+      "h": 5.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 7,
+      "y": 156.1,
+      "w": 18,
+      "h": 5.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 7,
+      "y": 152.9,
+      "w": 18,
+      "h": 5.4,
+      "fill": {
+        "type": "gradient",
+        "angle": 90,
+        "stops": ["#FDE68A", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 84.5,
+      "y": 94.5,
+      "w": 11,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#FDE047", "#B45309"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "circle",
+      "x": 86.04,
+      "y": 96.04,
+      "w": 7.92,
+      "fill": {
+        "type": "gradient",
+        "angle": 135,
+        "stops": ["#F59E0B", "#FDE68A"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 89.45,
+      "y": 97.69,
+      "w": 1.1,
+      "h": 4.62,
+      "radius": 0.44,
+      "rotate": 18,
+      "fill": {
+        "type": "solid",
+        "color": "#B45309"
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 5.08,
+      "y": 113.55,
+      "w": 3.12,
+      "h": 5.2,
+      "radius": 0.52,
+      "rotate": -8,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE68A", "#B45309"]
+      },
+      "shadow": true
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 8.71,
+      "y": 109.64,
+      "w": 3.12,
+      "h": 8.58,
+      "radius": 0.52,
+      "rotate": -8,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE68A", "#B45309"]
+      }
+    },
+    {
+      "type": "shape",
+      "shape": "roundRect",
+      "x": 12.3,
+      "y": 105.48,
+      "w": 3.12,
+      "h": 11.96,
+      "radius": 0.52,
+      "rotate": -8,
+      "fill": {
+        "type": "gradient",
+        "angle": 180,
+        "stops": ["#FDE68A", "#B45309"]
+      }
+    },
+    {
+      "type": "text",
+      "role": "headline",
+      "x": 8,
+      "y": 8,
+      "w": 84,
+      "fontSize": 6.2,
+      "weight": 800,
+      "align": "center",
+      "color": "#F8E7B8",
+      "accentColor": "#F59E0B",
+      "uppercase": true,
+      "shadow": true
+    },
+    {
+      "type": "text",
+      "role": "subheadline",
+      "x": 10,
+      "y": 22,
+      "w": 80,
+      "fontSize": 3.3,
+      "align": "center",
+      "color": "#D6C79A"
+    },
+    {
+      "type": "device",
+      "frame": "phone-generic",
+      "shadow": true,
+      "bleed": true,
+      "id": "phone",
+      "x": 26,
+      "y": 36,
+      "w": 52,
+      "rotate": -13,
+      "skewY": 12,
+      "depth": 4.4,
+      "depthAngle": 118,
+      "depthColor": "#B8860B",
+      "frameStyle": "gold",
+      "gloss": true
+    }
+  ],
+  "supports": ["phone", "tablet"]
+}
