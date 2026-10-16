@@ -1,10 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { lazy, Suspense, useEffect, type ReactNode } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { SITE_LINKS } from "@/config/site";
 import { CUSTOMIZE_STEP, STEPS, stepIndexOf } from "@/config/steps";
 import { useProject } from "@/store/useProject";
 import { useProjects } from "@/store/useProjects";
@@ -114,6 +116,13 @@ export function Wizard({ children }: { children: ReactNode }) {
           </CardContent>
         </Card>
       </div>
+      <footer className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
+        {SITE_LINKS.map((l) => (
+          <Link key={l.href} href={l.href} className="hover:text-foreground hover:underline">
+            {l.label}
+          </Link>
+        ))}
+      </footer>
     </div>
   );
 }
