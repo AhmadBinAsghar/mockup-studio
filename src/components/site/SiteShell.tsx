@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { SITE_LINKS, SITE_NAME } from "@/config/site";
+import { ThemeToggle } from "@/components/layout/ThemeToggle";
 import { LanguageSwitcher } from "@/i18n/LanguageSwitcher";
 import { useT } from "@/i18n/useT";
 
@@ -17,6 +18,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         </Link>
         <div className="flex items-center gap-4">
           <LanguageSwitcher />
+          <ThemeToggle />
           <Link href="/" className="text-sm text-muted-foreground hover:text-foreground">
             {t("site.backToApp")}
           </Link>

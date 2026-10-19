@@ -30,3 +30,13 @@ test("switching back to English restores LTR", async ({ page }) => {
   await expect(page.locator("html")).toHaveAttribute("dir", "ltr");
   await expect(page.getByRole("heading", { level: 1 })).toHaveText("Privacy Policy");
 });
+
+for (const path of ["/blog", "/privacy", "/terms", "/contact"]) {
+  test(`the theme toggle is available on ${path}`, async ({ page }) => {
+    await page.goto(path);
+    await page.getByRole("button", { name: "Switch to dark theme" }).click();
+    await expect(page.locator("html")).toHaveClass(/dark/);
+    await page.getByRole("button", { name: "Switch to light theme" }).click();
+    await expect(page.locator("html")).not.toHaveClass(/dark/);
+  });
+}
