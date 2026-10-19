@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { patchLayer, setSubheadline, textIndex } from "@/templates/builderModel";
 import type { Template, TextLayer } from "@/types";
@@ -15,6 +16,7 @@ interface Props {
 const ALIGNS: Array<TextLayer["align"]> = ["left", "center", "right"];
 
 export function TextSection({ draft, brand, onChange }: Props) {
+  const { t } = useT();
   const headlineAt = textIndex(draft, "headline");
   const subAt = textIndex(draft, "subheadline");
   const headline = draft.layers[headlineAt] as TextLayer | undefined;
@@ -25,27 +27,30 @@ export function TextSection({ draft, brand, onChange }: Props) {
   const editSub = (patch: Partial<TextLayer>) => onChange(patchLayer(draft, subAt, patch));
 
   return (
-    <Section
-      title="Headline"
-      hint="Drag the headline and subtitle on the preview to place them. Wrap a word in [brackets] to highlight it with the accent color."
-    >
+    <Section title={t("bsec.text.title")} hint={t("bsec.text.hint")}>
       <SliderRow
-        label="Size"
+        label={t("bsec.text.size")}
         value={headline.fontSize}
         min={3}
         max={12}
         step={0.1}
         onChange={(fontSize) => editHeadline({ fontSize })}
       />
-      <SliderRow label="Width" value={headline.w} min={30} max={100} onChange={(w) => editHeadline({ w })} />
       <SliderRow
-        label="Tilt"
+        label={t("bsec.text.width")}
+        value={headline.w}
+        min={30}
+        max={100}
+        onChange={(w) => editHeadline({ w })}
+      />
+      <SliderRow
+        label={t("bsec.text.tilt")}
         value={headline.rotate ?? 0}
         min={-15}
         max={15}
         onChange={(rotate) => editHeadline({ rotate })}
       />
-      <div className="flex gap-1" role="group" aria-label="Headline alignment">
+      <div className="flex gap-1" role="group" aria-label={t("bsec.text.alignGroup")}>
         {ALIGNS.map((align) => (
           <Button
             key={align}
@@ -54,47 +59,47 @@ export function TextSection({ draft, brand, onChange }: Props) {
             variant={(headline.align ?? "center") === align ? "default" : "outline"}
             onClick={() => editHeadline({ align })}
           >
-            {align}
+            {t(`bsec.text.align.${align}`)}
           </Button>
         ))}
       </div>
       <ColorRow
-        label="Text color"
+        label={t("bsec.text.color")}
         value={headline.color ?? "#FFFFFF"}
         brand={brand}
         onChange={(color) => editHeadline({ color })}
       />
       <ColorRow
-        label="Highlight color"
+        label={t("bsec.text.highlight")}
         value={headline.accentColor ?? "{brand}"}
         brand={brand}
         onChange={(accentColor) => editHeadline({ accentColor })}
       />
       <div className="flex flex-wrap gap-4">
         <ToggleRow
-          label="UPPERCASE"
+          label={t("bsec.text.uppercase")}
           checked={headline.uppercase ?? false}
           onChange={(uppercase) => editHeadline({ uppercase })}
         />
         <ToggleRow
-          label="Shadow"
+          label={t("bsec.text.shadow")}
           checked={headline.shadow ?? false}
           onChange={(shadow) => editHeadline({ shadow })}
         />
         <ToggleRow
-          label="Outline"
+          label={t("bsec.text.outline")}
           checked={Boolean(headline.stroke)}
           onChange={(on) => editHeadline({ stroke: on ? "#000000" : undefined })}
         />
         <ToggleRow
-          label="Extra bold"
+          label={t("bsec.text.bold")}
           checked={(headline.weight ?? 800) >= 800}
           onChange={(on) => editHeadline({ weight: on ? 800 : 600 })}
         />
       </div>
       {headline.stroke && (
         <ColorRow
-          label="Outline color"
+          label={t("bsec.text.outlineColor")}
           value={headline.stroke}
           brand={brand}
           allowBrand={false}
@@ -102,14 +107,14 @@ export function TextSection({ draft, brand, onChange }: Props) {
         />
       )}
       <ToggleRow
-        label="Show subtitle"
+        label={t("bsec.text.showSub")}
         checked={Boolean(sub)}
         onChange={(on) => onChange(setSubheadline(draft, on))}
       />
       {sub && (
         <>
           <SliderRow
-            label="Subtitle size"
+            label={t("bsec.text.subSize")}
             value={sub.fontSize}
             min={2}
             max={7}
@@ -117,7 +122,7 @@ export function TextSection({ draft, brand, onChange }: Props) {
             onChange={(fontSize) => editSub({ fontSize })}
           />
           <ColorRow
-            label="Subtitle color"
+            label={t("bsec.text.subColor")}
             value={sub.color ?? "#E5E7EB"}
             brand={brand}
             onChange={(color) => editSub({ color })}

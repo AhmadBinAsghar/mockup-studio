@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,19 +19,17 @@ interface Props {
 }
 
 export function RemoveLastScreenshotDialog({ open, contents, onCancel, onConfirm }: Props) {
+  const { t } = useT();
   return (
     <Dialog open={open} onOpenChange={(next) => !next && onCancel()}>
       <DialogContent role="alertdialog">
         <DialogHeader>
-          <DialogTitle>Remove your last screenshot?</DialogTitle>
-          <DialogDescription>
-            A project can&apos;t exist without screenshots. Removing the last one deletes this project&apos;s
-            saved data and starts it over. This can&apos;t be undone.
-          </DialogDescription>
+          <DialogTitle>{t("removeLast.title")}</DialogTitle>
+          <DialogDescription>{t("removeLast.description")}</DialogDescription>
         </DialogHeader>
         <div className="flex flex-col gap-2">
-          <p className="text-sm font-medium">What will be deleted:</p>
-          <ul className="list-disc space-y-1 pl-5 text-sm text-muted-foreground">
+          <p className="text-sm font-medium">{t("removeLast.contents")}</p>
+          <ul className="list-disc space-y-1 ps-5 text-sm text-muted-foreground">
             {contents.map((line) => (
               <li key={line}>{line}</li>
             ))}
@@ -38,10 +37,10 @@ export function RemoveLastScreenshotDialog({ open, contents, onCancel, onConfirm
         </div>
         <DialogFooter>
           <Button variant="outline" onClick={onCancel}>
-            Keep it
+            {t("removeLast.keep")}
           </Button>
           <Button variant="destructive" onClick={onConfirm}>
-            Delete and start over
+            {t("removeLast.confirm")}
           </Button>
         </DialogFooter>
       </DialogContent>

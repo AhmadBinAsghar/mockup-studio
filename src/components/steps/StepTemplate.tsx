@@ -9,15 +9,18 @@ import { CategoryList } from "@/components/templates/CategoryList";
 import { SlideTargetPicker, type TemplateTarget } from "@/components/templates/SlideTargetPicker";
 import { TemplateGrid } from "@/components/templates/TemplateGrid";
 import { Button } from "@/components/ui/button";
+import { useT } from "@/i18n/useT";
 import { neighborsOf } from "@/lib/neighbors";
 import { localizeSlide } from "@/localization/slideText";
 import { useProject } from "@/store/useProject";
 import { useAllTemplates } from "@/store/useTemplates";
 import { CATEGORIES, categoryOf } from "@/templates/categories";
+import { categoryDescription, templateName } from "@/templates/localized";
 import { pickTemplate } from "@/templates";
 import type { Template, TemplateCategoryId } from "@/types";
 
 export function StepTemplate() {
+  const { t } = useT();
   const {
     slides,
     templateId,
@@ -44,22 +47,22 @@ export function StepTemplate() {
   );
 
   if (!first || !previewSlide)
-    return <p className="text-sm text-muted-foreground">Upload a screenshot first to preview templates.</p>;
+    return <p className="text-sm text-muted-foreground">{t("template.uploadFirst")}</p>;
 
   const neighbors = neighborsOf(slides, slides.indexOf(targetSlide ?? first));
   const current = pickTemplate(targetSlide, templateId, customTemplates);
   const activeCategory = pickedCategory ?? categoryOf(current);
   const categories = CATEGORIES.map((c) => ({
     ...c,
-    count: templates.filter((t) => categoryOf(t) === c.id).length,
+    count: templates.filter((tpl) => categoryOf(tpl) === c.id).length,
   })).filter((c) => c.count > 0 || c.id !== "custom");
-  const inCategory = templates.filter((t) => categoryOf(t) === activeCategory);
+  const inCategory = templates.filter((tpl) => categoryOf(tpl) === activeCategory);
 
   const appliesTo = targetSlide
-    ? `screenshot ${slides.indexOf(targetSlide) + 1} only`
+    ? t("template.appliesOne", { n: slides.indexOf(targetSlide) + 1 })
     : slides.length > 1
-      ? "all screenshots"
-      : "your screenshot";
+      ? t("template.appliesAll")
+      : t("template.appliesSingle");
 
   const chooseTarget = (next: TemplateTarget) => {
     setTarget(next);
@@ -88,7 +91,7 @@ export function StepTemplate() {
 
       {/* ── Custom template actions — shown prominently at the top ── */}
       <div className="flex flex-wrap items-center gap-2 rounded-xl border border-dashed border-border bg-muted/40 px-4 py-3">
-        <span className="mr-1 text-xs font-medium text-muted-foreground">Custom templates:</span>
+        <span className="me-1 text-xs font-medium text-muted-foreground">{t("template.customActions")}</span>
 
         {/* Edit the currently-selected template */}
         <Button
@@ -98,14 +101,14 @@ export function StepTemplate() {
           onClick={() =>
             setBuilder({
               source: current,
-              name: current.name,
+              name: templateName(current),
               editingId: current.custom ? current.id : undefined,
               appliesTo,
             })
           }
         >
           <Pencil className="h-3.5 w-3.5" />
-          Edit: {current.name}
+          {t("template.edit", { name: templateName(current) })}
         </Button>
 
         {/* Generate via AI / paste JSON */}
@@ -116,7 +119,7 @@ export function StepTemplate() {
           onClick={() => setJsonImportOpen(true)}
         >
           <Sparkles className="h-3.5 w-3.5" />
-          Create with AI / JSON
+          {t("template.createAi")}
         </Button>
       </div>
 
@@ -125,7 +128,10 @@ export function StepTemplate() {
         <CategoryList categories={categories} active={activeCategory} onSelect={setPickedCategory} />
         <div className="flex flex-col gap-2">
           <p className="text-xs text-muted-foreground">
-            {CATEGORIES.find((c) => c.id === activeCategory)?.description}
+            {(() => {
+              const category = CATEGORIES.find((c) => c.id === activeCategory);
+              return category ? categoryDescription(category) : null;
+            })()}
           </p>
           <TemplateGrid
             templates={inCategory}
@@ -137,7 +143,9 @@ export function StepTemplate() {
             brand={brand}
             onPick={pick}
             onDelete={deleteCustomTemplate}
-            onEdit={(t) => setBuilder({ source: t, name: t.name, editingId: t.id, appliesTo })}
+            onEdit={(tpl) =>
+              setBuilder({ source: tpl, name: templateName(tpl), editingId: tpl.id, appliesTo })
+            }
           />
         </div>
       </div>

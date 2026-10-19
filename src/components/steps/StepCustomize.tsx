@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -25,6 +26,7 @@ const BRAND_FONT = "brand";
 const BULLET_COUNT = 3;
 
 export function StepCustomize() {
+  const { t } = useT();
   const {
     slides,
     selectedId,
@@ -37,14 +39,14 @@ export function StepCustomize() {
   } = useProject();
   const slide = slides.find((s) => s.id === selectedId) ?? slides[0];
   const template = useSlideTemplate(slide);
-  if (!slide) return <p className="text-sm text-muted-foreground">Upload a screenshot first.</p>;
+  if (!slide) return <p className="text-sm text-muted-foreground">{t("customize.uploadFirst")}</p>;
 
   const style = styleFor(slide, template.id);
   const text = textFor(slide, activeLocale);
   const frameOn = slide.deviceFrame ?? template.defaultFrame ?? true;
   const hasBullets = template.layers.some((l) => l.type === "bullets");
   const fontOptions = [
-    { value: BRAND_FONT, label: `Brand (${brand.font})` },
+    { value: BRAND_FONT, label: t("customize.brandFont", { font: brand.font }) },
     ...FONTS.map((f) => ({ value: f.family, label: f.family })),
   ];
   const edit = (change: Partial<SlideText>) => updateSlide(slide.id, textPatch(slide, activeLocale, change));
@@ -66,12 +68,12 @@ export function StepCustomize() {
       <LocalePanel />
       <Card size="sm">
         <CardHeader>
-          <CardTitle>Slide: {slide.name}</CardTitle>
+          <CardTitle>{t("customize.slide", { name: slide.name })}</CardTitle>
         </CardHeader>
         <CardContent className="flex flex-col gap-3">
-          <Field label="Headline (wrap a word in [brackets] to accent it)">
+          <Field label={t("customize.headlineField")}>
             <Input
-              aria-label="Headline"
+              aria-label={t("customize.headline")}
               value={text.headline}
               onChange={(e) => edit({ headline: e.target.value })}
             />
@@ -79,16 +81,16 @@ export function StepCustomize() {
           {lintHeadline(text.headline).map((m) => (
             <Notice key={m}>{m}</Notice>
           ))}
-          <Field label="Subheadline">
+          <Field label={t("customize.subheadline")}>
             <Input
-              aria-label="Subheadline"
+              aria-label={t("customize.subheadline")}
               value={text.subheadline}
               onChange={(e) => edit({ subheadline: e.target.value })}
             />
           </Field>
           {hasBullets &&
             Array.from({ length: BULLET_COUNT }, (_, i) => (
-              <Field key={i} label={`Bullet ${i + 1}`}>
+              <Field key={i} label={t("customize.bullet", { n: i + 1 })}>
                 <Input
                   value={splitCard(text.bullets[i] ?? "").title}
                   onChange={(e) => setCard(i, { title: e.target.value })}
@@ -97,25 +99,22 @@ export function StepCustomize() {
             ))}
           {cardIndexes.length > 0 && (
             <div className="flex flex-col gap-3 rounded-lg border border-dashed p-3">
-              <p className="text-xs text-muted-foreground">
-                This design has feature cards. Keep each one short: a few words for the title and one short
-                sentence for the description. Leave a card empty to hide it.
-              </p>
+              <p className="text-xs text-muted-foreground">{t("customize.cardsHint")}</p>
               {cardIndexes.map((i) => {
                 const card = splitCard(text.bullets[i] ?? "");
                 return (
                   <div key={i} className="grid gap-2 sm:grid-cols-[2fr_3fr]">
-                    <Field label={`Card ${i + 1} title`}>
+                    <Field label={t("customize.cardTitle", { n: i + 1 })}>
                       <Input
-                        aria-label={`Card ${i + 1} title`}
+                        aria-label={t("customize.cardTitle", { n: i + 1 })}
                         value={card.title}
                         maxLength={40}
                         onChange={(e) => setCard(i, { title: e.target.value })}
                       />
                     </Field>
-                    <Field label={`Card ${i + 1} description`}>
+                    <Field label={t("customize.cardDescription", { n: i + 1 })}>
                       <Input
-                        aria-label={`Card ${i + 1} description`}
+                        aria-label={t("customize.cardDescription", { n: i + 1 })}
                         value={card.detail}
                         maxLength={90}
                         onChange={(e) => setCard(i, { detail: e.target.value })}
@@ -127,15 +126,15 @@ export function StepCustomize() {
             </div>
           )}
           <div className="grid grid-cols-2 gap-3">
-            <Field label="Text color">
+            <Field label={t("customize.textColor")}>
               <div className="flex items-center gap-2">
                 <ColorInput
-                  label="Text color"
+                  label={t("customize.textColor")}
                   value={style.textColor ?? "#ffffff"}
                   onChange={(textColor) => setSlideStyle(slide.id, template.id, { textColor })}
                 />
                 <span className="text-xs text-muted-foreground">
-                  {style.textColor ? "Custom (this design only)" : "Template default"}
+                  {style.textColor ? t("customize.customOnly") : t("customize.templateDefault")}
                 </span>
                 {style.textColor && (
                   <Button
@@ -143,14 +142,14 @@ export function StepCustomize() {
                     size="sm"
                     onClick={() => clearSlideStyle(slide.id, template.id, "textColor")}
                   >
-                    Reset
+                    {t("customize.reset")}
                   </Button>
                 )}
               </div>
             </Field>
-            <Field label="Font">
+            <Field label={t("customize.font")}>
               <SelectField
-                ariaLabel="Slide font"
+                ariaLabel={t("customize.slideFont")}
                 value={slide.font ?? BRAND_FONT}
                 options={fontOptions}
                 onChange={(v) =>
@@ -168,7 +167,7 @@ export function StepCustomize() {
               checked={frameOn}
               onCheckedChange={(checked) => updateSlide(slide.id, { deviceFrame: checked })}
             />
-            <Label htmlFor="device-frame">Device frame (Google Play advises against device imagery)</Label>
+            <Label htmlFor="device-frame">{t("customize.deviceFrame")}</Label>
           </div>
         </CardContent>
       </Card>

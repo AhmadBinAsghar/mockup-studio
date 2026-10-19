@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { PostBody } from "@/components/site/SitePages";
 import { SITE_NAME, SITE_URL } from "@/config/site";
 import { getPost, POSTS } from "@/content/posts";
 
@@ -32,8 +32,6 @@ export async function generateMetadata({ params }: PageProps<"/blog/[slug]">): P
   };
 }
 
-const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
-
 export default async function Page({ params }: PageProps<"/blog/[slug]">) {
   const { slug } = await params;
   const post = getPost(slug);
@@ -58,42 +56,7 @@ export default async function Page({ params }: PageProps<"/blog/[slug]">) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground">
-        <Link href="/blog" className="hover:underline">
-          ← All posts
-        </Link>
-      </nav>
-      <header className="flex flex-col gap-2">
-        <h1 className="text-3xl font-extrabold">{post.title}</h1>
-        <p className="text-xs text-muted-foreground">
-          <time dateTime={post.published}>{dateFormat.format(new Date(post.published))}</time> ·{" "}
-          {post.readingMinutes} min read
-        </p>
-      </header>
-      {post.sections.map((s) => (
-        <section key={s.heading} className="flex flex-col gap-2">
-          <h2 className="text-xl font-bold">{s.heading}</h2>
-          {s.paragraphs.map((text) => (
-            <p key={text} className="text-sm leading-relaxed text-muted-foreground">
-              {text}
-            </p>
-          ))}
-          {s.list && (
-            <ul className="list-disc space-y-1 pl-5 text-sm leading-relaxed text-muted-foreground">
-              {s.list.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-          )}
-        </section>
-      ))}
-      <aside className="rounded-xl border bg-muted p-4 text-sm">
-        Ready to make yours?{" "}
-        <Link href="/upload" className="font-semibold underline">
-          Open {SITE_NAME}
-        </Link>
-        .
-      </aside>
+      <PostBody slug={post.slug} />
     </article>
   );
 }

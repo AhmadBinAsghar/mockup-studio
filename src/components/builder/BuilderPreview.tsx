@@ -3,6 +3,7 @@
 import { Plus, Redo2, Undo2 } from "lucide-react";
 import { useCallback, useMemo, useState } from "react";
 
+import { useT } from "@/i18n/useT";
 import { SlideCanvas } from "@/components/preview/SlideCanvas";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -28,9 +29,9 @@ import { SelectField } from "@/components/shared/form";
 import { CanvasOverlay } from "./CanvasOverlay";
 
 const SIZES = [
-  { value: "phone", label: "Phone 1080 × 1920", width: 1080, height: 1920, kind: "phone" as const },
-  { value: "tablet", label: "Tablet 1440 × 2560", width: 1440, height: 2560, kind: "tablet" as const },
-  { value: "feature", label: "Feature graphic 1024 × 500", width: 1024, height: 500, kind: "phone" as const },
+  { value: "phone", labelKey: "bpreview.phone", width: 1080, height: 1920, kind: "phone" as const },
+  { value: "tablet", labelKey: "bpreview.tablet", width: 1440, height: 2560, kind: "tablet" as const },
+  { value: "feature", labelKey: "bpreview.feature", width: 1024, height: 500, kind: "phone" as const },
 ];
 
 export interface BuilderHistoryControls {
@@ -50,6 +51,7 @@ interface Props {
 }
 
 export function BuilderPreview({ draft, name, selected, onSelect, onChange, history }: Props) {
+  const { t } = useT();
   const { slides, selectedId, brand, activeLocale } = useProject();
   const [sizeId, setSizeId] = useState("phone");
   const [report, setReport] = useState<RenderReport | null>(null);
@@ -90,9 +92,9 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
       <div className="flex w-full items-center gap-1">
         <div className="min-w-0 flex-1">
           <SelectField
-            ariaLabel="Preview size"
+            ariaLabel={t("preview.sizeAria")}
             value={sizeId}
-            options={SIZES.map(({ value, label }) => ({ value, label }))}
+            options={SIZES.map(({ value, labelKey }) => ({ value, label: t(labelKey) }))}
             onChange={(id) => {
               setSizeId(id);
               if (id !== "phone") onSelect(null);
@@ -103,8 +105,8 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
           type="button"
           size="icon"
           variant="outline"
-          aria-label="Undo"
-          title="Undo (Ctrl+Z)"
+          aria-label={t("bpreview.undo")}
+          title={t("bpreview.undoTitle")}
           disabled={!history.canUndo}
           onClick={history.undo}
         >
@@ -114,8 +116,8 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
           type="button"
           size="icon"
           variant="outline"
-          aria-label="Redo"
-          title="Redo (Ctrl+Shift+Z)"
+          aria-label={t("bpreview.redo")}
+          title={t("bpreview.redoTitle")}
           disabled={!history.canRedo}
           onClick={history.redo}
         >
@@ -124,9 +126,13 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
       </div>
 
       {editable && (
-        <div className="flex w-full flex-wrap items-center gap-1" role="group" aria-label="Add to the design">
-          <span className="text-xs text-muted-foreground">Add:</span>
-          {SHAPE_KINDS.map(({ kind, label }) => (
+        <div
+          className="flex w-full flex-wrap items-center gap-1"
+          role="group"
+          aria-label={t("bpreview.addGroup")}
+        >
+          <span className="text-xs text-muted-foreground">{t("bpreview.add")}</span>
+          {SHAPE_KINDS.map(({ kind }) => (
             <Button
               key={kind}
               type="button"
@@ -134,7 +140,7 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
               variant="outline"
               onClick={() => add(addShapeSelected(draft, kind))}
             >
-              <Plus /> {label}
+              <Plus /> {t(`shape.${kind}`)}
             </Button>
           ))}
           <Button
@@ -144,7 +150,7 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
             disabled={layerIndexes(draft, "device").length >= MAX_PHONES}
             onClick={() => add(addPhoneSelected(draft))}
           >
-            <Plus /> Phone
+            <Plus /> {t("bpreview.addPhone")}
           </Button>
           <Button
             type="button"
@@ -153,7 +159,7 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
             disabled={!canAddCallout(draft)}
             onClick={() => add(addCallout(draft))}
           >
-            <Plus /> Card
+            <Plus /> {t("bpreview.addCard")}
           </Button>
         </div>
       )}
@@ -186,12 +192,10 @@ export function BuilderPreview({ draft, name, selected, onSelect, onChange, hist
       </div>
 
       <p className="text-center text-xs text-muted-foreground">
-        {editable
-          ? "Click anything to select it, drag to move it, pull the handles to resize or rotate. Hold Alt to turn snapping off."
-          : "Switch the preview to Phone to move things around. Tablet and wide layouts follow the phone design."}
+        {editable ? t("bpreview.helpEdit") : t("bpreview.helpFixed")}
       </p>
 
-      <div className="flex w-full flex-wrap gap-1" role="group" aria-label="Layers, front to back">
+      <div className="flex w-full flex-wrap gap-1" role="group" aria-label={t("bpreview.layers")}>
         {draft.layers
           .map((_, i) => i)
           .reverse()

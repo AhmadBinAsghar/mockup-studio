@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { patchLayer } from "@/templates/builderModel";
 import type { DeviceLayer, FrameStyle, Template } from "@/types";
 
@@ -15,54 +16,47 @@ interface Props {
   selected: number | null;
 }
 
-const FINISHES: Array<{ value: FrameStyle; label: string }> = [
-  { value: "dark", label: "Black" },
-  { value: "silver", label: "Silver" },
-  { value: "gold", label: "Gold" },
-  { value: "titanium", label: "Titanium" },
-  { value: "white", label: "White" },
-];
-
-const SOURCES = [
-  { value: "self", label: "This screenshot" },
-  { value: "prev", label: "Previous screenshot" },
-  { value: "next", label: "Next screenshot" },
-];
+const FINISH_VALUES: FrameStyle[] = ["dark", "silver", "gold", "titanium", "white"];
+const SOURCE_VALUES = ["self", "prev", "next"] as const;
 
 export function PhoneSection({ draft, brand, onChange, selected }: Props) {
+  const { t } = useT();
+  const finishes = FINISH_VALUES.map((value) => ({ value, label: t(`bsec.phone.finish.${value}`) }));
+  const sources = SOURCE_VALUES.map((value) => ({ value, label: t(`bsec.phone.source.${value}`) }));
   const layer = selected === null ? undefined : draft.layers[selected];
   const at = selected ?? -1;
   const phone = layer?.type === "device" ? layer : undefined;
   const edit = (patch: Partial<DeviceLayer>) => onChange(patchLayer(draft, at, patch));
 
   return (
-    <Section
-      title="Phone"
-      hint="Click a phone on the preview to select it, drag it to move it, and use its handles to resize or rotate it."
-    >
+    <Section title={t("bsec.phone.title")} hint={t("bsec.phone.hint")}>
       {!phone ? (
-        <p className="text-xs text-muted-foreground">
-          Select a phone on the preview to change its finish, tilt, thickness and which screenshot it shows.
-        </p>
+        <p className="text-xs text-muted-foreground">{t("bsec.phone.select")}</p>
       ) : (
         <>
-          <SliderRow label="Size" value={phone.w} min={20} max={110} onChange={(w) => edit({ w })} />
           <SliderRow
-            label="Rotation"
+            label={t("bsec.phone.size")}
+            value={phone.w}
+            min={20}
+            max={110}
+            onChange={(w) => edit({ w })}
+          />
+          <SliderRow
+            label={t("bsec.phone.rotation")}
             value={phone.rotate ?? 0}
             min={-45}
             max={45}
             onChange={(rotate) => edit({ rotate })}
           />
           <SliderRow
-            label="3D tilt"
+            label={t("bsec.phone.tilt")}
             value={phone.skewY ?? 0}
             min={-25}
             max={25}
             onChange={(skewY) => edit({ skewY })}
           />
           <SliderRow
-            label="Thickness"
+            label={t("bsec.phone.thickness")}
             value={phone.depth ?? 0}
             min={0}
             max={6}
@@ -70,46 +64,51 @@ export function PhoneSection({ draft, brand, onChange, selected }: Props) {
             onChange={(depth) => edit({ depth })}
           />
           <SelectField
-            ariaLabel="Phone finish"
+            ariaLabel={t("bsec.phone.finishAria")}
             value={phone.frameStyle ?? "dark"}
-            options={FINISHES}
+            options={finishes}
             onChange={(frameStyle) => edit({ frameStyle: frameStyle as FrameStyle })}
           />
           <SelectField
-            ariaLabel="Screenshot shown on this phone"
+            ariaLabel={t("bsec.phone.sourceAria")}
             value={phone.show ?? "self"}
-            options={SOURCES}
+            options={sources}
             onChange={(show) => edit({ show: show as DeviceLayer["show"] })}
           />
           <div className="flex flex-wrap gap-4">
             <ToggleRow
-              label="Shadow"
+              label={t("bsec.phone.shadow")}
               checked={phone.shadow ?? false}
               onChange={(shadow) => edit({ shadow })}
             />
             <ToggleRow
-              label="Glass shine"
+              label={t("bsec.phone.gloss")}
               checked={phone.gloss ?? false}
               onChange={(gloss) => edit({ gloss })}
             />
             <ToggleRow
-              label="Neon edge"
+              label={t("bsec.phone.neon")}
               checked={Boolean(phone.rim)}
               onChange={(on) => edit({ rim: on ? "{brand-pop}" : undefined })}
             />
             <ToggleRow
-              label="Dim"
+              label={t("bsec.phone.dim")}
               checked={(phone.dim ?? 0) > 0}
               onChange={(on) => edit({ dim: on ? 0.45 : 0 })}
             />
           </div>
           {phone.rim && (
-            <ColorRow label="Edge color" value={phone.rim} brand={brand} onChange={(rim) => edit({ rim })} />
+            <ColorRow
+              label={t("bsec.phone.edgeColor")}
+              value={phone.rim}
+              brand={brand}
+              onChange={(rim) => edit({ rim })}
+            />
           )}
         </>
       )}
       <ToggleRow
-        label="Show device frame"
+        label={t("bsec.phone.showFrame")}
         checked={draft.defaultFrame ?? true}
         onChange={(defaultFrame) => onChange({ ...draft, defaultFrame })}
       />

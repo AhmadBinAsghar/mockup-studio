@@ -1,11 +1,11 @@
 export const SITE_NAME = "Mockup Studio";
-export const LEGAL_UPDATED = "October 16, 2026";
+export const LEGAL_UPDATED = "2026-10-16";
 
 export const SITE_LINKS = [
-  { href: "/blog", label: "Blog" },
-  { href: "/privacy", label: "Privacy Policy" },
-  { href: "/terms", label: "Terms of Service" },
-  { href: "/contact", label: "Contact" },
+  { href: "/blog", labelKey: "nav.blog" },
+  { href: "/privacy", labelKey: "nav.privacy" },
+  { href: "/terms", labelKey: "nav.terms" },
+  { href: "/contact", labelKey: "nav.contact" },
 ] as const;
 
 export const EMAILJS = {

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
-import { POSTS } from "@/content/posts";
+import { BlogIndexBody } from "@/components/site/SitePages";
 
 export const metadata: Metadata = {
   title: "Blog · Mockup Studio",
@@ -12,35 +11,6 @@ export const metadata: Metadata = {
 
 export const instant = false;
 
-const dateFormat = new Intl.DateTimeFormat("en-US", { dateStyle: "long", timeZone: "UTC" });
-
 export default function Page() {
-  return (
-    <>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-3xl font-extrabold">Blog</h1>
-        <p className="text-sm text-muted-foreground">
-          Guides for making app store screenshots that look great and meet store requirements.
-        </p>
-      </div>
-      <ul className="flex flex-col gap-4">
-        {POSTS.map((p) => (
-          <li key={p.slug}>
-            <article className="flex flex-col gap-1.5 rounded-xl border p-4">
-              <h2 className="text-lg font-bold">
-                <Link href={`/blog/${p.slug}`} className="hover:underline">
-                  {p.title}
-                </Link>
-              </h2>
-              <p className="text-sm text-muted-foreground">{p.description}</p>
-              <p className="text-xs text-muted-foreground">
-                <time dateTime={p.published}>{dateFormat.format(new Date(p.published))}</time> ·{" "}
-                {p.readingMinutes} min read
-              </p>
-            </article>
-          </li>
-        ))}
-      </ul>
-    </>
-  );
+  return <BlogIndexBody />;
 }

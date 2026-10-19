@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { I18nInit } from "@/i18n/I18nInit";
+import { UI_LOCALE_INIT_SCRIPT } from "@/i18n/config";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/config/site";
 import { THEME_INIT_SCRIPT } from "@/lib/theme";
 
@@ -31,8 +33,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_INIT_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: UI_LOCALE_INIT_SCRIPT }} />
       </head>
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <I18nInit />
+        {children}
+      </body>
     </html>
   );
 }

@@ -1,9 +1,9 @@
 export const STEPS = [
-  { path: "/upload", title: "Upload" },
-  { path: "/targets", title: "Targets" },
-  { path: "/template", title: "Template" },
-  { path: "/customize", title: "Customize" },
-  { path: "/export", title: "Export" },
+  { path: "/upload", titleKey: "steps.upload" },
+  { path: "/targets", titleKey: "steps.targets" },
+  { path: "/template", titleKey: "steps.template" },
+  { path: "/customize", titleKey: "steps.customize" },
+  { path: "/export", titleKey: "steps.export" },
 ] as const;
 
 export const CUSTOMIZE_STEP = 3;

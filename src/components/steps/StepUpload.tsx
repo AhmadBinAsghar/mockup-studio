@@ -13,6 +13,7 @@ import { CSS } from "@dnd-kit/utilities";
 import { useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 
+import { useT } from "@/i18n/useT";
 import { readImageFile } from "@/lib/imageCache";
 import { MAX_SLIDES, useProject } from "@/store/useProject";
 import type { Slide } from "@/types";
@@ -23,6 +24,7 @@ import { Notice } from "@/components/shared/form";
 import { RemoveLastScreenshotDialog } from "./RemoveLastScreenshotDialog";
 
 function Thumb({ slide, onDelete }: { slide: Slide; onDelete: () => void }) {
+  const { t } = useT();
   const { attributes, listeners, setNodeRef, transform, transition } = useSortable({ id: slide.id });
   const imgRef = useRef<HTMLImageElement>(null);
   useEffect(() => {
@@ -49,9 +51,9 @@ function Thumb({ slide, onDelete }: { slide: Slide; onDelete: () => void }) {
       <Button
         variant="destructive"
         size="icon-xs"
-        aria-label={`Delete ${slide.name}`}
+        aria-label={t("upload.delete", { name: slide.name })}
         onClick={onDelete}
-        className="absolute right-1 top-1 bg-black/70 text-white hover:bg-destructive"
+        className="absolute end-1 top-1 bg-black/70 text-white hover:bg-destructive"
       >
         ✕
       </Button>
@@ -60,6 +62,7 @@ function Thumb({ slide, onDelete }: { slide: Slide; onDelete: () => void }) {
 }
 
 export function StepUpload() {
+  const { t } = useT();
   const project = useProject();
   const ready = useProject((s) => s.hydrated);
   const { slides, addSlides, removeSlide, moveSlide } = project;
@@ -72,9 +75,9 @@ export function StepUpload() {
     disabled: !ready,
     accept: { "image/png": [".png"], "image/jpeg": [".jpg", ".jpeg"] },
     onDrop: async (files, rejected) => {
-      setError(rejected.length ? "Only PNG or JPG files are accepted." : null);
+      setError(rejected.length ? t("upload.errType") : null);
       const room = MAX_SLIDES - slides.length;
-      if (files.length > room) setError(`You can add up to ${MAX_SLIDES} screenshots.`);
+      if (files.length > room) setError(t("upload.errMax", { max: MAX_SLIDES }));
       const accepted = files.slice(0, Math.max(room, 0));
       const sizes = await Promise.all(accepted.map(readImageFile));
       const added: Slide[] = accepted.map((file, i) => {
@@ -121,11 +124,9 @@ export function StepUpload() {
           isDragActive ? "border-primary bg-accent" : "border-input hover:border-ring"
         }`}
       >
-        <input {...getInputProps()} aria-label="Upload screenshots" />
-        <p className="font-semibold">Drop 1–{MAX_SLIDES} screenshots here</p>
-        <p className="text-sm text-muted-foreground">
-          PNG or JPG, or click to browse. Files never leave your browser.
-        </p>
+        <input {...getInputProps()} aria-label={t("upload.inputLabel")} />
+        <p className="font-semibold">{t("upload.dropTitle", { max: MAX_SLIDES })}</p>
+        <p className="text-sm text-muted-foreground">{t("upload.dropHint")}</p>
       </div>
       {error && <Notice>{error}</Notice>}
       <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={onDragEnd}>
@@ -141,7 +142,7 @@ export function StepUpload() {
           </ul>
         </SortableContext>
       </DndContext>
-      {slides.length > 1 && <p className="text-xs text-muted-foreground">Drag a thumbnail to reorder.</p>}
+      {slides.length > 1 && <p className="text-xs text-muted-foreground">{t("upload.reorder")}</p>}
       <RemoveLastScreenshotDialog
         open={confirmingLast !== null}
         contents={summary}

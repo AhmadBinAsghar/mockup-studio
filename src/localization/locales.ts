@@ -1,3 +1,5 @@
+import { getUiLocale, t } from "@/i18n/store";
+
 export interface LocaleOption {
   code: string;
   label: string;
@@ -34,6 +36,17 @@ export const LOCALES: readonly LocaleOption[] = [
   { code: "zh", label: "Chinese (Simplified)" },
 ];
 
+const RTL_CODES = new Set(["ar", "ur"]);
+
+/** The language's name in the interface language (English names when the UI is English). */
 export function localeLabel(code: string): string {
-  return LOCALES.find((l) => l.code === code)?.label ?? code;
+  const english = LOCALES.find((l) => l.code === code)?.label ?? code;
+  const ui = getUiLocale();
+  if (ui === "en") return english;
+  try {
+    const name = new Intl.DisplayNames([ui], { type: "language" }).of(code) ?? english;
+    return RTL_CODES.has(code) ? t("slidelang.withRtl", { name }) : name;
+  } catch {
+    return english;
+  }
 }

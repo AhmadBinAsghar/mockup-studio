@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import { useT } from "@/i18n/useT";
+import { tRich } from "@/i18n/rich";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { exportZip } from "@/export/exportZip";
@@ -16,6 +18,8 @@ import { useActiveTemplate, useAllTemplates } from "@/store/useTemplates";
 import { Notice } from "@/components/shared/form";
 
 export function StepExport() {
+  const tr = useT();
+  const { t, tn } = tr;
   const { slides, presetIds, customSizes, landscape, locales, brand } = useProject();
   const template = useActiveTemplate();
   const allTemplates = useAllTemplates();
@@ -47,22 +51,32 @@ export function StepExport() {
       );
       setFinished(true);
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Export failed");
+      setError(e instanceof Error ? e.message : t("export.failed"));
     }
   }
 
   return (
     <div className="flex flex-col gap-4">
       <p className="text-sm">
-        {slides.length} slide{slides.length === 1 ? "" : "s"} × {outputs.length} size
-        {outputs.length === 1 ? "" : "s"}
-        {locales.length > 1 && ` × ${locales.length} languages`} = <strong>{total} images</strong>
+        {tRich(
+          tr,
+          "export.formula",
+          { strong: (text) => <strong>{text}</strong> },
+          {
+            parts: [
+              tn("export.slides", slides.length),
+              tn("export.sizes", outputs.length),
+              ...(locales.length > 1 ? [tn("export.languages", locales.length)] : []),
+            ].join(" × "),
+            total,
+          },
+        )}
       </p>
       <ul className="text-xs text-muted-foreground">
         {outputs.map((o) => (
           <li key={o.folder}>
             <code>{o.folder}/</code> {o.width} × {o.height}
-            {o.singleImage && " (first slide only)"}
+            {o.singleImage && ` ${t("export.firstOnly")}`}
           </li>
         ))}
       </ul>
@@ -70,16 +84,19 @@ export function StepExport() {
         <Notice key={w}>{w}</Notice>
       ))}
       <Button size="lg" className="h-10" onClick={run} disabled={busy || total === 0}>
-        {busy ? "Generating…" : "Generate & download ZIP"}
+        {busy ? t("export.generating") : t("export.generate")}
       </Button>
       {progress && (
-        <Progress value={(progress.done / Math.max(progress.total, 1)) * 100} aria-label="Export progress">
+        <Progress
+          value={(progress.done / Math.max(progress.total, 1)) * 100}
+          aria-label={t("export.progressAria")}
+        >
           <span className="text-xs text-muted-foreground">
-            {progress.done} / {progress.total} images
+            {t("export.progress", { done: progress.done, total: progress.total })}
           </span>
         </Progress>
       )}
-      {finished && <Notice tone="info">Done. Your ZIP has been downloaded.</Notice>}
+      {finished && <Notice tone="info">{t("export.done")}</Notice>}
       {error && <Notice>{error}</Notice>}
     </div>
   );

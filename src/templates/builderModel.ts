@@ -1,3 +1,4 @@
+import { t } from "@/i18n/store";
 import type { DeviceLayer, Fill, Layer, ShapeLayer, Template } from "@/types";
 
 export type ShapeKind = "circle" | "roundRect" | "glow" | "ring" | "band";
@@ -189,10 +190,10 @@ export const MAX_PHONES = 4;
 export const MAX_CARDS = 3;
 
 export function describeShape(shape: ShapeLayer): string {
-  if (shape.shape === "polygon") return "Diagonal band";
-  if (shape.stroke && !shape.fill) return "Ring";
-  if (shape.fill?.type === "radial") return "Glow";
-  return shape.shape === "circle" ? "Circle" : "Rounded square";
+  if (shape.shape === "polygon") return t("shape.band");
+  if (shape.stroke && !shape.fill) return t("shape.ring");
+  if (shape.fill?.type === "radial") return t("shape.glow");
+  return shape.shape === "circle" ? t("shape.circle") : t("shape.roundRect");
 }
 
 /** A short human name for a layer, e.g. "Headline", "Phone 2", "Circle 3". */
@@ -200,13 +201,14 @@ export function layerLabel(draft: Template, index: number): string {
   const layer = draft.layers[index];
   if (!layer) return "";
   const before = draft.layers.slice(0, index);
-  if (layer.type === "text") return layer.role === "headline" ? "Headline" : "Subtitle";
-  if (layer.type === "device") return `Phone ${before.filter((l) => l.type === "device").length + 1}`;
-  if (layer.type === "callout") return `Card ${layer.index + 1}`;
-  if (layer.type === "bullets") return "Bullet list";
+  if (layer.type === "text") return layer.role === "headline" ? t("layer.headline") : t("layer.subtitle");
+  if (layer.type === "device")
+    return t("layer.phone", { n: before.filter((l) => l.type === "device").length + 1 });
+  if (layer.type === "callout") return t("layer.card", { n: layer.index + 1 });
+  if (layer.type === "bullets") return t("layer.bullets");
   const name = describeShape(layer);
   const same = before.filter((l) => l.type === "shape" && describeShape(l) === name).length;
-  return `${name} ${same + 1}`;
+  return t("layer.shape", { name, n: same + 1 });
 }
 
 export function canDeleteLayer(draft: Template, index: number): boolean {

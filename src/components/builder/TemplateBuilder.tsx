@@ -3,6 +3,7 @@
 import { useState } from "react";
 import type { KeyboardEvent } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -17,6 +18,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { getTemplate, parseTemplateJson } from "@/templates";
 import { CATEGORIES, categoryOf } from "@/templates/categories";
+import { categoryLabel, templateName } from "@/templates/localized";
 import { finishTemplate, startDraft } from "@/templates/builderModel";
 import { useProject } from "@/store/useProject";
 import { useAllTemplates } from "@/store/useTemplates";
@@ -45,6 +47,7 @@ interface Props {
 }
 
 function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } & Omit<Props, "session">) {
+  const { t } = useT();
   const brand = useProject((s) => s.brand.color);
   const customTemplates = useProject((s) => s.customTemplates);
   const templates = useAllTemplates();
@@ -63,10 +66,13 @@ function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } &
   const [json, setJson] = useState("");
   const [errors, setErrors] = useState<string[]>([]);
 
-  const labelOf = (t: Template) => `${CATEGORIES.find((c) => c.id === categoryOf(t))?.label} · ${t.name}`;
+  const labelOf = (tpl: Template) => {
+    const category = CATEGORIES.find((c) => c.id === categoryOf(tpl));
+    return `${category ? categoryLabel(category) : ""} · ${templateName(tpl)}`;
+  };
 
   function save() {
-    if (!name.trim()) return setErrors(["Give the template a name."]);
+    if (!name.trim()) return setErrors([t("builder.errName")]);
     const id = session.editingId ?? `custom-${Date.now()}`;
     onSave(finishTemplate(draft, id, name.trim()));
   }
@@ -97,22 +103,19 @@ function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } &
   return (
     <DialogContent className="max-h-[94vh] overflow-y-auto sm:max-w-5xl" onKeyDown={onKeyDown}>
       <DialogHeader>
-        <DialogTitle>{session.editingId ? "Edit your template" : "Create your template"}</DialogTitle>
-        <DialogDescription>
-          Start from any design, then click and drag things right on the preview. Your screenshots are never
-          changed, only this template. When you save, it is applied to {session.appliesTo}.
-        </DialogDescription>
+        <DialogTitle>{session.editingId ? t("builder.titleEdit") : t("builder.titleCreate")}</DialogTitle>
+        <DialogDescription>{t("builder.description", { target: session.appliesTo })}</DialogDescription>
       </DialogHeader>
       <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,22rem)]">
         <div className="flex flex-col gap-3">
-          <Field label="Template name">
-            <Input aria-label="Template name" value={name} onChange={(e) => setName(e.target.value)} />
+          <Field label={t("builder.name")}>
+            <Input aria-label={t("builder.name")} value={name} onChange={(e) => setName(e.target.value)} />
           </Field>
-          <Field label="Start from">
+          <Field label={t("builder.startFrom")}>
             <SelectField
-              ariaLabel="Start from template"
+              ariaLabel={t("builder.startFromAria")}
               value={session.source.id}
-              options={templates.map((t) => ({ value: t.id, label: labelOf(t) }))}
+              options={templates.map((tpl) => ({ value: tpl.id, label: labelOf(tpl) }))}
               onChange={(id) => {
                 setPickedLayer(null);
                 setDraft(startDraft(getTemplate(id, customTemplates)));
@@ -124,8 +127,8 @@ function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } &
             onValueChange={(v) => v === "json" && setJson(JSON.stringify(draft, null, 2))}
           >
             <TabsList>
-              <TabsTrigger value="design">Design</TabsTrigger>
-              <TabsTrigger value="json">Advanced (JSON)</TabsTrigger>
+              <TabsTrigger value="design">{t("builder.tabDesign")}</TabsTrigger>
+              <TabsTrigger value="json">{t("builder.tabJson")}</TabsTrigger>
             </TabsList>
             <TabsContent value="design" className="flex flex-col gap-3">
               <BackgroundSection draft={draft} brand={brand} onChange={setDraft} />
@@ -135,14 +138,14 @@ function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } &
             </TabsContent>
             <TabsContent value="json" className="flex flex-col gap-2">
               <Textarea
-                aria-label="Template JSON"
+                aria-label={t("builder.jsonAria")}
                 className="h-80 font-mono text-xs"
                 spellCheck={false}
                 value={json}
                 onChange={(e) => setJson(e.target.value)}
               />
               <Button type="button" variant="outline" onClick={applyJson}>
-                Apply JSON to the design
+                {t("builder.applyJson")}
               </Button>
             </TabsContent>
           </Tabs>
@@ -163,9 +166,9 @@ function BuilderBody({ session, onClose, onSave }: { session: BuilderSession } &
       ))}
       <DialogFooter>
         <Button variant="outline" onClick={onClose}>
-          Cancel
+          {t("builder.cancel")}
         </Button>
-        <Button onClick={save}>Save template</Button>
+        <Button onClick={save}>{t("builder.save")}</Button>
       </DialogFooter>
     </DialogContent>
   );

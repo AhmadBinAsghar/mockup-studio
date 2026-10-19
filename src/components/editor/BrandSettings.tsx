@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import { FONTS } from "@/renderer/fonts";
@@ -10,25 +11,25 @@ import { ColorInput, Field, SelectField } from "@/components/shared/form";
 const FONT_OPTIONS = FONTS.map((f) => ({ value: f.family, label: f.family }));
 
 export function BrandSettings() {
+  const { t } = useT();
   const { brand, setBrand } = useProject();
   return (
     <Card size="sm">
       <CardHeader>
-        <CardTitle>Brand (applies to all slides)</CardTitle>
+        <CardTitle>{t("brand.title")}</CardTitle>
       </CardHeader>
       <CardContent className="grid grid-cols-2 gap-3">
-        <p className="col-span-2 text-xs text-muted-foreground">
-          Your brand color is your app&apos;s main color. The General templates are built entirely from it
-          (plus lighter, darker and matching shades), so changing it recolors them at once. The themed
-          templates (Education, Food, Games and so on) keep their own palette unless you switch on the option
-          below. The brand font is used for all text unless you pick a different font for one slide.
-        </p>
-        <Field label="Brand color">
-          <ColorInput label="Brand color" value={brand.color} onChange={(color) => setBrand({ color })} />
+        <p className="col-span-2 text-xs text-muted-foreground">{t("brand.help")}</p>
+        <Field label={t("brand.color")}>
+          <ColorInput
+            label={t("brand.color")}
+            value={brand.color}
+            onChange={(color) => setBrand({ color })}
+          />
         </Field>
-        <Field label="Font">
+        <Field label={t("brand.font")}>
           <SelectField
-            ariaLabel="Brand font"
+            ariaLabel={t("brand.fontAria")}
             value={brand.font}
             options={FONT_OPTIONS}
             onChange={(font) => setBrand({ font })}
@@ -38,14 +39,11 @@ export function BrandSettings() {
           <Checkbox
             checked={brand.tint ?? false}
             onCheckedChange={(tint) => setBrand({ tint: tint === true })}
-            aria-label="Match all templates to my brand color"
+            aria-label={t("brand.match")}
           />
           <span>
-            Match all templates to my brand color
-            <span className="block text-xs text-muted-foreground">
-              Shifts the colors of every themed template to your brand color while keeping each design.
-              Neutral colors such as white and black stay the same.
-            </span>
+            {t("brand.match")}
+            <span className="block text-xs text-muted-foreground">{t("brand.matchHint")}</span>
           </span>
         </label>
       </CardContent>

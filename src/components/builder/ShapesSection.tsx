@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { describeShape, patchLayer } from "@/templates/builderModel";
 import type { ShapeFill, ShapeLayer, Template } from "@/types";
 
@@ -36,13 +37,14 @@ function ShapeRow({
   brand: string;
   onEdit: (patch: Partial<ShapeLayer>) => void;
 }) {
+  const { t } = useT();
   const flat = shape.shape !== "polygon";
   return (
     <div className="flex flex-col gap-2 rounded-lg bg-muted/40 p-2">
       <div className="text-sm font-medium">{describeShape(shape)}</div>
       {shape.fill && (
         <ColorRow
-          label="Color"
+          label={t("bsec.shapes.color")}
           value={firstColor(shape.fill)}
           brand={brand}
           onChange={(color) => onEdit({ fill: withFirstColor(shape.fill as ShapeFill, color) })}
@@ -50,7 +52,7 @@ function ShapeRow({
       )}
       {shape.fill?.type === "gradient" && (
         <ColorRow
-          label="Second color"
+          label={t("bsec.shapes.second")}
           value={shape.fill.stops[1]}
           brand={brand}
           onChange={(color) => onEdit({ fill: withSecondColor(shape.fill as ShapeFill, color) })}
@@ -58,7 +60,7 @@ function ShapeRow({
       )}
       {shape.stroke && (
         <ColorRow
-          label="Line color"
+          label={t("bsec.shapes.line")}
           value={shape.stroke}
           brand={brand}
           onChange={(stroke) => onEdit({ stroke })}
@@ -66,9 +68,15 @@ function ShapeRow({
       )}
       {flat && (
         <>
-          <SliderRow label="Size" value={shape.w} min={4} max={160} onChange={(w) => onEdit({ w })} />
           <SliderRow
-            label="Rotation"
+            label={t("bsec.shapes.size")}
+            value={shape.w}
+            min={4}
+            max={160}
+            onChange={(w) => onEdit({ w })}
+          />
+          <SliderRow
+            label={t("bsec.shapes.rotation")}
             value={shape.rotate ?? 0}
             min={-90}
             max={90}
@@ -77,7 +85,7 @@ function ShapeRow({
         </>
       )}
       <SliderRow
-        label="Opacity"
+        label={t("bsec.shapes.opacity")}
         value={shape.opacity ?? 1}
         min={0.05}
         max={1}
@@ -89,13 +97,11 @@ function ShapeRow({
 }
 
 export function ShapesSection({ draft, brand, onChange, selected }: Props) {
+  const { t } = useT();
   const layer = selected === null ? undefined : draft.layers[selected];
   const shape = layer?.type === "shape" ? layer : undefined;
   return (
-    <Section
-      title="Decorations"
-      hint="Add circles, glows, rings and bands with the Add buttons above the preview, then drag them into place."
-    >
+    <Section title={t("bsec.shapes.title")} hint={t("bsec.shapes.hint")}>
       {shape && selected !== null ? (
         <ShapeRow
           key={selected}
@@ -104,9 +110,7 @@ export function ShapesSection({ draft, brand, onChange, selected }: Props) {
           onEdit={(patch) => onChange(patchLayer(draft, selected, patch))}
         />
       ) : (
-        <p className="text-xs text-muted-foreground">
-          Select a decoration on the preview to change its color, size and opacity.
-        </p>
+        <p className="text-xs text-muted-foreground">{t("bsec.shapes.select")}</p>
       )}
     </Section>
   );

@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { SliderRow } from "@/components/builder/controls";
@@ -10,6 +11,7 @@ const OFFSET_RANGE = 40;
 const NUDGE = 2;
 
 export function DevicePositionControls({ slide }: { slide: Slide }) {
+  const { t } = useT();
   const updateSlide = useProject((s) => s.updateSlide);
   const x = slide.deviceOffsetX ?? 0;
   const y = slide.deviceOffsetY ?? 0;
@@ -21,42 +23,52 @@ export function DevicePositionControls({ slide }: { slide: Slide }) {
   return (
     <div className="flex flex-col gap-3">
       <div className="flex items-center justify-between">
-        <Label>Screenshot position</Label>
+        <Label>{t("position.label")}</Label>
         <Button
           variant="outline"
           size="sm"
           disabled={!moved}
           onClick={() => updateSlide(slide.id, { deviceOffsetX: 0, deviceOffsetY: 0, deviceScale: 1 })}
         >
-          Reset
+          {t("position.reset")}
         </Button>
       </div>
       <div className="grid grid-cols-4 gap-2">
-        <Button variant="outline" size="sm" aria-label="Move screenshot up" onClick={() => nudge(0, -NUDGE)}>
-          ↑ Up
-        </Button>
-        <Button variant="outline" size="sm" aria-label="Move screenshot down" onClick={() => nudge(0, NUDGE)}>
-          ↓ Down
+        <Button
+          variant="outline"
+          size="sm"
+          aria-label={t("position.moveUp")}
+          onClick={() => nudge(0, -NUDGE)}
+        >
+          {t("position.up")}
         </Button>
         <Button
           variant="outline"
           size="sm"
-          aria-label="Move screenshot left"
+          aria-label={t("position.moveDown")}
+          onClick={() => nudge(0, NUDGE)}
+        >
+          {t("position.down")}
+        </Button>
+        <Button
+          variant="outline"
+          size="sm"
+          aria-label={t("position.moveLeft")}
           onClick={() => nudge(-NUDGE, 0)}
         >
-          ← Left
+          {t("position.left")}
         </Button>
         <Button
           variant="outline"
           size="sm"
-          aria-label="Move screenshot right"
+          aria-label={t("position.moveRight")}
           onClick={() => nudge(NUDGE, 0)}
         >
-          → Right
+          {t("position.right")}
         </Button>
       </div>
       <SliderRow
-        label="Vertical"
+        label={t("position.vertical")}
         value={y}
         min={-OFFSET_RANGE}
         max={OFFSET_RANGE}
@@ -64,7 +76,7 @@ export function DevicePositionControls({ slide }: { slide: Slide }) {
         onChange={(deviceOffsetY) => updateSlide(slide.id, { deviceOffsetY })}
       />
       <SliderRow
-        label="Horizontal"
+        label={t("position.horizontal")}
         value={x}
         min={-OFFSET_RANGE}
         max={OFFSET_RANGE}
@@ -72,7 +84,7 @@ export function DevicePositionControls({ slide }: { slide: Slide }) {
         onChange={(deviceOffsetX) => updateSlide(slide.id, { deviceOffsetX })}
       />
       <SliderRow
-        label="Size"
+        label={t("position.size")}
         value={scale}
         min={0.5}
         max={1.5}

@@ -13,6 +13,8 @@ import {
   type LucideIcon,
 } from "lucide-react";
 
+import { useT } from "@/i18n/useT";
+import { categoryLabel } from "@/templates/localized";
 import { Button } from "@/components/ui/button";
 import type { TemplateCategory } from "@/templates/categories";
 import type { TemplateCategoryId } from "@/types";
@@ -36,9 +38,10 @@ interface Props {
 }
 
 export function CategoryList({ categories, active, onSelect }: Props) {
+  const { t } = useT();
   return (
     <nav
-      aria-label="Template categories"
+      aria-label={t("template.categories")}
       className="flex gap-2 overflow-x-auto pb-1 md:flex-col md:overflow-visible"
     >
       {categories.map((category) => {
@@ -49,10 +52,10 @@ export function CategoryList({ categories, active, onSelect }: Props) {
             variant={category.id === active ? "default" : "outline"}
             aria-pressed={category.id === active}
             onClick={() => onSelect(category.id)}
-            className="h-auto shrink-0 justify-start gap-2 whitespace-normal py-2 text-left"
+            className="h-auto shrink-0 justify-start gap-2 whitespace-normal py-2 text-start"
           >
             <Icon className="size-4 shrink-0" aria-hidden />
-            <span className="flex-1">{category.label}</span>
+            <span className="flex-1">{categoryLabel(category)}</span>
             <span className="text-xs opacity-70">{category.count}</span>
           </Button>
         );

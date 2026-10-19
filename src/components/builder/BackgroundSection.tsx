@@ -1,5 +1,6 @@
 "use client";
 
+import { useT } from "@/i18n/useT";
 import type { Fill, Template } from "@/types";
 import { setBackground } from "@/templates/builderModel";
 
@@ -13,23 +14,23 @@ interface Props {
   onChange: (draft: Template) => void;
 }
 
-const TYPES = [
-  { value: "solid", label: "One color" },
-  { value: "gradient", label: "Two-color gradient" },
-];
-
 export function BackgroundSection({ draft, brand, onChange }: Props) {
+  const { t } = useT();
+  const types = [
+    { value: "solid", label: t("bsec.bg.solid") },
+    { value: "gradient", label: t("bsec.bg.gradient") },
+  ];
   const fill = draft.background;
   const first = fill.type === "solid" ? fill.color : fill.stops[0];
   const second = fill.type === "gradient" ? fill.stops[1] : "{brand-dark}";
   const set = (next: Fill) => onChange(setBackground(draft, next));
 
   return (
-    <Section title="Background" hint="Shapes you add below can sit on top of the background.">
+    <Section title={t("bsec.bg.title")} hint={t("bsec.bg.hint")}>
       <SelectField
-        ariaLabel="Background type"
+        ariaLabel={t("bg.typeAria")}
         value={fill.type}
-        options={TYPES}
+        options={types}
         onChange={(type) =>
           set(
             type === "solid"
@@ -39,7 +40,7 @@ export function BackgroundSection({ draft, brand, onChange }: Props) {
         }
       />
       <ColorRow
-        label="Color 1"
+        label={t("bg.color1")}
         value={first}
         brand={brand}
         onChange={(color) =>
@@ -49,13 +50,13 @@ export function BackgroundSection({ draft, brand, onChange }: Props) {
       {fill.type === "gradient" && (
         <>
           <ColorRow
-            label="Color 2"
+            label={t("bg.color2")}
             value={second}
             brand={brand}
             onChange={(color) => set({ ...fill, stops: [first, color] })}
           />
           <SliderRow
-            label="Gradient angle"
+            label={t("bg.angle")}
             value={fill.angle}
             min={0}
             max={360}

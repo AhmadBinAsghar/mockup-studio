@@ -4,6 +4,7 @@ import { BringToFront, Copy, RotateCw, SendToBack, Trash2, X } from "lucide-reac
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties, KeyboardEvent, PointerEvent } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { RenderReport } from "@/renderer/renderSlide";
@@ -95,6 +96,7 @@ function boxStyle(layer: Layer, box: Box, size: { width: number; height: number 
  * from the boxes the renderer reports, so it always lines up with what is drawn.
  */
 export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: Props) {
+  const { t } = useT();
   const wrapRef = useRef<HTMLDivElement>(null);
   const dragRef = useRef<Drag | null>(null);
   const frame = useRef(0);
@@ -283,7 +285,7 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
       ref={wrapRef}
       tabIndex={0}
       role="application"
-      aria-label="Template canvas. Click an item to select it, drag to move it, arrow keys to nudge, Delete to remove."
+      aria-label={t("overlay.canvas")}
       className={cn("absolute inset-0 touch-none outline-none", hover !== null && "cursor-pointer")}
       onPointerDown={onPointerDown}
       onPointerMove={onPointerMove}
@@ -324,21 +326,21 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             ).map((position) => (
               <div
                 key={position}
-                aria-label={selectedLayer.type === "text" ? "Resize text" : "Resize"}
+                aria-label={selectedLayer.type === "text" ? t("overlay.resizeText") : t("overlay.resize")}
                 className={cn(HANDLE, position, "cursor-nwse-resize")}
                 onPointerDown={(e) => begin(e, selected, "scale")}
               />
             ))}
           {handles.includes("left") && (
             <div
-              aria-label="Make narrower or wider (left edge)"
+              aria-label={t("overlay.narrowLeft")}
               className={cn(HANDLE, "-left-1.5 top-1/2 h-5 w-2.5 -translate-y-1/2 cursor-ew-resize")}
               onPointerDown={(e) => begin(e, selected, "left")}
             />
           )}
           {handles.includes("right") && (
             <div
-              aria-label="Make narrower or wider (right edge)"
+              aria-label={t("overlay.narrowRight")}
               className={cn(HANDLE, "-right-1.5 top-1/2 h-5 w-2.5 -translate-y-1/2 cursor-ew-resize")}
               onPointerDown={(e) => begin(e, selected, "right")}
             />
@@ -347,7 +349,7 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             <>
               <div className="pointer-events-none absolute -top-6 left-1/2 h-6 w-px -translate-x-1/2 bg-sky-500" />
               <div
-                aria-label="Rotate (hold Shift to snap)"
+                aria-label={t("overlay.rotate")}
                 className="absolute -top-9 left-1/2 z-10 flex size-5 -translate-x-1/2 cursor-grab touch-none items-center justify-center rounded-full border border-sky-500 bg-white text-sky-600 shadow-sm"
                 onPointerDown={(e) => begin(e, selected, "rotate")}
               >
@@ -358,7 +360,7 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
           {canDeleteLayer(draft, selected) && (
             <button
               type="button"
-              aria-label={`Delete ${layerLabel(draft, selected)}`}
+              aria-label={t("overlay.deleteLayer", { name: layerLabel(draft, selected) })}
               className="absolute -right-3 -top-3 z-20 flex size-5 items-center justify-center rounded-full bg-red-500 text-white shadow-md ring-2 ring-white hover:bg-red-600"
               onPointerDown={(e) => e.stopPropagation()}
               onClick={() => remove(selected)}
@@ -398,8 +400,8 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             type="button"
             size="icon-xs"
             variant="ghost"
-            aria-label="Send backward"
-            title="Send backward"
+            aria-label={t("overlay.sendBack")}
+            title={t("overlay.sendBack")}
             disabled={selected === 0}
             onClick={() => reorder(selected, -1)}
           >
@@ -409,8 +411,8 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             type="button"
             size="icon-xs"
             variant="ghost"
-            aria-label="Bring forward"
-            title="Bring forward"
+            aria-label={t("overlay.bringForward")}
+            title={t("overlay.bringForward")}
             disabled={selected === draft.layers.length - 1}
             onClick={() => reorder(selected, 1)}
           >
@@ -420,8 +422,8 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             type="button"
             size="icon-xs"
             variant="ghost"
-            aria-label="Duplicate"
-            title="Duplicate (Ctrl+D)"
+            aria-label={t("overlay.duplicate")}
+            title={t("overlay.duplicateTitle")}
             disabled={!canDuplicateLayer(draft, selected)}
             onClick={() => duplicate(selected)}
           >
@@ -431,8 +433,8 @@ export function CanvasOverlay({ draft, report, selected, onSelect, onChange }: P
             type="button"
             size="icon-xs"
             variant="ghost"
-            aria-label="Delete"
-            title="Delete (Del)"
+            aria-label={t("overlay.delete")}
+            title={t("overlay.deleteTitle")}
             className="text-destructive"
             disabled={!canDeleteLayer(draft, selected)}
             onClick={() => remove(selected)}

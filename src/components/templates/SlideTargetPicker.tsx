@@ -2,6 +2,7 @@
 
 import { useMemo } from "react";
 
+import { useT } from "@/i18n/useT";
 import { SlideCanvas } from "@/components/preview/SlideCanvas";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -38,6 +39,7 @@ interface Props {
 }
 
 export function SlideTargetPicker({ target, onTarget }: Props) {
+  const { t } = useT();
   const { slides, brand, activeLocale, setSlideTemplate } = useProject();
   if (slides.length < 2) return null;
 
@@ -45,21 +47,21 @@ export function SlideTargetPicker({ target, onTarget }: Props) {
   const targetIndex = slides.findIndex((s) => s.id === target);
 
   return (
-    <section className="flex flex-col gap-2" aria-label="Design target">
-      <p className="text-sm font-semibold">Design for</p>
+    <section className="flex flex-col gap-2" aria-label={t("template.designTarget")}>
+      <p className="text-sm font-semibold">{t("template.designFor")}</p>
       <div className="flex flex-wrap items-end gap-2">
         <Button
           variant={target === "all" ? "default" : "outline"}
           aria-pressed={target === "all"}
           onClick={() => onTarget("all")}
         >
-          All screenshots
+          {t("template.allScreenshots")}
         </Button>
         {slides.map((slide, i) => (
           <button
             key={slide.id}
             type="button"
-            aria-label={`Screenshot ${i + 1}`}
+            aria-label={t("template.screenshotN", { n: i + 1 })}
             aria-pressed={target === slide.id}
             onClick={() => onTarget(slide.id)}
             className={cn(
@@ -68,21 +70,19 @@ export function SlideTargetPicker({ target, onTarget }: Props) {
             )}
           >
             <TargetThumb slide={slide} locale={activeLocale} brand={brand} />
-            <span className="absolute bottom-0 left-0 rounded-tr bg-black/70 px-1 text-[10px] text-white">
+            <span className="absolute bottom-0 start-0 rounded-tr bg-black/70 px-1 text-[10px] text-white">
               {i + 1}
             </span>
-            {slide.templateId && (
-              <span className="absolute right-0.5 top-0.5 size-2 rounded-full bg-primary" />
-            )}
+            {slide.templateId && <span className="absolute end-0.5 top-0.5 size-2 rounded-full bg-primary" />}
           </button>
         ))}
       </div>
       {targetSlide && (
         <p className="text-xs text-muted-foreground">
-          Picking a template now changes screenshot {targetIndex + 1} only.
+          {t("template.pickingOnly", { n: targetIndex + 1 })}
           {targetSlide.templateId && (
             <Button variant="link" size="xs" onClick={() => setSlideTemplate(targetSlide.id, null)}>
-              Use the default design again
+              {t("template.useDefault")}
             </Button>
           )}
         </p>

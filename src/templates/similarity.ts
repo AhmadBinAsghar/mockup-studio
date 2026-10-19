@@ -1,3 +1,4 @@
+import { t } from "@/i18n/store";
 import type { Template } from "@/types";
 
 const HEX_OR_TOKEN = /#[0-9a-fA-F]{6}|\{brand[a-z-]*\}/g;
@@ -72,7 +73,5 @@ export function findLookalike(template: Template, others: Template[]): Lookalike
 }
 
 export function lookalikeMessage(found: Lookalike): string {
-  return found.reason === "layout"
-    ? `This design uses the same layout as "${found.name}", only with other colors. Ask the AI for a different composition (different positions, phone arrangement and decorations) as well as a different palette.`
-    : `This design is almost identical to "${found.name}". Ask the AI for a clearly different palette and composition.`;
+  return t(found.reason === "layout" ? "lookalike.layout" : "lookalike.same", { name: found.name });
 }

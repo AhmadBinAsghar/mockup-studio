@@ -14,6 +14,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
+import { useT } from "@/i18n/useT";
 import { FIRST_STEP_PATH } from "@/config/steps";
 import type { ProjectMeta } from "@/store/projectRegistry";
 import { useProjects } from "@/store/useProjects";
@@ -29,6 +30,7 @@ function ProjectRow({
   active: boolean;
   onDone: () => void;
 }) {
+  const { t } = useT();
   const { open, rename, remove } = useProjects();
   const router = useRouter();
   const [mode, setMode] = useState<Mode>("idle");
@@ -56,14 +58,14 @@ function ProjectRow({
       {mode === "renaming" ? (
         <>
           <Input
-            aria-label="Project name"
+            aria-label={t("projects.nameLabel")}
             value={name}
             autoFocus
             onChange={(e) => setName(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && submitRename()}
           />
           <Button size="sm" onClick={submitRename}>
-            Save
+            {t("projects.save")}
           </Button>
         </>
       ) : (
@@ -75,21 +77,21 @@ function ProjectRow({
             onClick={openProject}
           >
             <span className="truncate">{project.name}</span>
-            {active && <span className="text-xs text-muted-foreground">(open)</span>}
+            {active && <span className="text-xs text-muted-foreground">{t("projects.open")}</span>}
           </Button>
           {mode === "confirmingDelete" ? (
             <>
               <Button size="sm" variant="destructive" onClick={deleteProject}>
-                Confirm delete
+                {t("projects.confirmDelete")}
               </Button>
               <Button size="sm" variant="outline" onClick={() => setMode("idle")}>
-                Cancel
+                {t("projects.cancel")}
               </Button>
             </>
           ) : (
             <>
               <Button size="sm" variant="outline" onClick={() => setMode("renaming")}>
-                Rename
+                {t("projects.rename")}
               </Button>
               <Button
                 size="sm"
@@ -97,7 +99,7 @@ function ProjectRow({
                 className="text-destructive"
                 onClick={() => setMode("confirmingDelete")}
               >
-                Delete
+                {t("projects.delete")}
               </Button>
             </>
           )}
@@ -108,6 +110,7 @@ function ProjectRow({
 }
 
 export function ProjectSwitcher() {
+  const { t } = useT();
   const router = useRouter();
   const { projects, activeId, create } = useProjects();
   const [open, setOpen] = useState(false);
@@ -125,16 +128,14 @@ export function ProjectSwitcher() {
         render={
           <Button variant="outline" size="sm">
             <FolderOpen />
-            <span className="max-w-40 truncate">{current?.name ?? "Projects"}</span>
+            <span className="max-w-40 truncate">{current?.name ?? t("projects.title")}</span>
           </Button>
         }
       />
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Projects</DialogTitle>
-          <DialogDescription>
-            Each project keeps its own screenshots and settings, saved in this browser.
-          </DialogDescription>
+          <DialogTitle>{t("projects.title")}</DialogTitle>
+          <DialogDescription>{t("projects.description")}</DialogDescription>
         </DialogHeader>
         <ul className="flex max-h-80 flex-col gap-2 overflow-y-auto">
           {projects.map((p) => (
@@ -142,7 +143,7 @@ export function ProjectSwitcher() {
           ))}
         </ul>
         <Button onClick={createProject}>
-          <Plus /> New project
+          <Plus /> {t("projects.new")}
         </Button>
       </DialogContent>
     </Dialog>

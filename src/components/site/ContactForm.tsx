@@ -2,6 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Field, Notice } from "@/components/shared/form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -14,6 +15,7 @@ type Status = "idle" | "sending" | "sent" | "error";
 const COOLDOWN_MS = 30_000;
 
 export function ContactForm() {
+  const { t } = useT();
   const [errors, setErrors] = useState<ContactErrors>({});
   const [status, setStatus] = useState<Status>("idle");
   const [lastSent, setLastSent] = useState(0);
@@ -47,16 +49,16 @@ export function ContactForm() {
   }
 
   if (!isMailConfigured()) {
-    return <Notice>The contact form isn&apos;t set up yet. Please check back soon.</Notice>;
+    return <Notice>{t("contact.notConfigured")}</Notice>;
   }
 
   return (
     <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4">
-      <Field label="Name">
+      <Field label={t("contact.name")}>
         <Input name="name" autoComplete="name" maxLength={CONTACT_LIMITS.name} aria-invalid={!!errors.name} />
         {errors.name && <p className="text-xs text-destructive">{errors.name}</p>}
       </Field>
-      <Field label="Email">
+      <Field label={t("contact.email")}>
         <Input
           name="email"
           type="email"
@@ -66,7 +68,7 @@ export function ContactForm() {
         />
         {errors.email && <p className="text-xs text-destructive">{errors.email}</p>}
       </Field>
-      <Field label="Message">
+      <Field label={t("contact.message")}>
         <Textarea
           name="message"
           rows={6}
@@ -84,13 +86,11 @@ export function ContactForm() {
       />
       <div className="flex items-center gap-3">
         <Button type="submit" disabled={status === "sending"}>
-          {status === "sending" ? "Sending…" : "Send message"}
+          {status === "sending" ? t("contact.sending") : t("contact.send")}
         </Button>
         <p role="status" className="text-sm">
-          {status === "sent" && "Thanks! Your message was sent."}
-          {status === "error" && (
-            <span className="text-destructive">Couldn&apos;t send. Please wait a moment and try again.</span>
-          )}
+          {status === "sent" && t("contact.sent")}
+          {status === "error" && <span className="text-destructive">{t("contact.failed")}</span>}
         </p>
       </div>
     </form>

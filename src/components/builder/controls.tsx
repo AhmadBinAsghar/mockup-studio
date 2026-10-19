@@ -2,6 +2,7 @@
 
 import type { ReactNode } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
@@ -54,10 +55,10 @@ export function ToggleRow({
 }
 
 const TOKEN_CHIPS = [
-  { token: "{brand}", label: "Brand" },
-  { token: "{brand-light}", label: "Light" },
-  { token: "{brand-dark}", label: "Dark" },
-  { token: "{brand-pop}", label: "Pop" },
+  { token: "{brand}", labelKey: "color.brand" },
+  { token: "{brand-light}", labelKey: "color.light" },
+  { token: "{brand-dark}", labelKey: "color.dark" },
+  { token: "{brand-pop}", labelKey: "color.pop" },
 ];
 
 function resolveColor(value: string, brand: string): string {
@@ -79,6 +80,7 @@ export function ColorRow({
   onChange: (value: string) => void;
   allowBrand?: boolean;
 }) {
+  const { t } = useT();
   const linked = value.startsWith("{brand");
   return (
     <div className="flex flex-wrap items-center gap-2 text-sm">
@@ -97,13 +99,13 @@ export function ColorRow({
             type="button"
             size="xs"
             variant={value === chip.token ? "default" : "outline"}
-            aria-label={`${label}: ${chip.label} brand shade`}
+            aria-label={t("color.chipAria", { label, shade: t(chip.labelKey) })}
             onClick={() => onChange(chip.token)}
           >
-            {chip.label}
+            {t(chip.labelKey)}
           </Button>
         ))}
-      {linked && <span className="text-[10px] text-muted-foreground">follows your brand color</span>}
+      {linked && <span className="text-[10px] text-muted-foreground">{t("color.follows")}</span>}
     </div>
   );
 }

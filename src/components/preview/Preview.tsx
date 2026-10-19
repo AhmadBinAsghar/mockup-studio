@@ -2,6 +2,7 @@
 
 import { useCallback, useMemo, useState } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Button } from "@/components/ui/button";
 import { neighborsOf } from "@/lib/neighbors";
 import { lintTextArea } from "@/validation/lint";
@@ -19,6 +20,7 @@ import { SlideCanvas } from "./SlideCanvas";
 const FALLBACK_OUTPUT: OutputSize = { folder: "", label: "Phone", width: 1080, height: 1920, kind: "phone" };
 
 export function Preview() {
+  const { t } = useT();
   const { slides, selectedId, select, brand, presetIds, customSizes, landscape, activeLocale } = useProject();
   const [sizeIndex, setSizeIndex] = useState(0);
   const [report, setReport] = useState<RenderReport | null>(null);
@@ -39,7 +41,7 @@ export function Preview() {
   if (!slide || !localized) {
     return (
       <div className="flex min-h-64 items-center justify-center rounded-xl bg-muted text-sm text-muted-foreground">
-        Live preview appears here
+        {t("wizard.previewEmpty")}
       </div>
     );
   }
@@ -52,7 +54,7 @@ export function Preview() {
     <div className="flex min-w-0 flex-col items-center gap-3">
       {outputs.length > 0 && (
         <SelectField
-          ariaLabel="Preview size"
+          ariaLabel={t("preview.sizeAria")}
           value={String(chosen)}
           options={outputs.map((o, i) => ({
             value: String(i),
@@ -82,7 +84,7 @@ export function Preview() {
             key={s.id}
             size="icon-sm"
             variant={s.id === slide.id ? "default" : "outline"}
-            aria-label={`Preview slide ${i + 1}`}
+            aria-label={t("preview.slideAria", { n: i + 1 })}
             aria-current={s.id === slide.id}
             onClick={() => select(s.id)}
           >

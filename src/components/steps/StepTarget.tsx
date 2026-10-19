@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { useT } from "@/i18n/useT";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -11,7 +12,9 @@ import { Label } from "@/components/ui/label";
 import {
   CUSTOM_MAX,
   CUSTOM_MIN,
-  NOT_STORE_SIZE_NOTE,
+  notStoreSizeNote,
+  presetLabel,
+  presetRules,
   presetsForStore,
   STORE_LABELS,
   validateCustomSize,
@@ -23,6 +26,7 @@ import { useProject } from "@/store/useProject";
 import { Notice } from "@/components/shared/form";
 
 function StoreGroup({ store }: { store: StoreId }) {
+  const { t } = useT();
   const { presetIds, togglePreset, setPresets } = useProject();
   const presets = presetsForStore(store);
   const ids = presets.map((p) => p.id);
@@ -35,7 +39,7 @@ function StoreGroup({ store }: { store: StoreId }) {
       <CardHeader className="flex-row items-center justify-between">
         <CardTitle>{STORE_LABELS[store]}</CardTitle>
         <Button variant="ghost" size="sm" onClick={toggleAll}>
-          {allOn ? "Clear all" : "Select all"}
+          {allOn ? t("targets.clearAll") : t("targets.selectAll")}
         </Button>
       </CardHeader>
       <CardContent>
@@ -50,13 +54,13 @@ function StoreGroup({ store }: { store: StoreId }) {
               />
               <Label htmlFor={p.id} className="flex flex-col items-start gap-0.5 font-normal">
                 <span>
-                  <span className="font-medium">{p.label}</span>{" "}
+                  <span className="font-medium">{presetLabel(p)}</span>{" "}
                   <span className="text-muted-foreground">
                     {p.width} × {p.height}
                   </span>{" "}
-                  {p.required && <Badge variant="secondary">required</Badge>}
+                  {p.required && <Badge variant="secondary">{t("targets.required")}</Badge>}
                 </span>
-                <span className="text-xs text-muted-foreground">{p.rules}</span>
+                <span className="text-xs text-muted-foreground">{presetRules(p)}</span>
               </Label>
             </li>
           ))}
@@ -98,6 +102,7 @@ function SizeInput({
 }
 
 function CustomSizes() {
+  const { t } = useT();
   const { customSizes, addCustomSize, removeCustomSize } = useProject();
   const [width, setWidth] = useState("1600");
   const [height, setHeight] = useState("3200");
@@ -117,22 +122,34 @@ function CustomSizes() {
   return (
     <Card size="sm">
       <CardHeader>
-        <CardTitle>Custom dimensions</CardTitle>
+        <CardTitle>{t("targets.customTitle")}</CardTitle>
       </CardHeader>
       <CardContent className="flex flex-col gap-3">
         <div className="flex flex-wrap items-end gap-2">
-          <SizeInput id="custom-w" label="Width (px)" className="w-24" value={width} onChange={setWidth} />
-          <SizeInput id="custom-h" label="Height (px)" className="w-24" value={height} onChange={setHeight} />
+          <SizeInput
+            id="custom-w"
+            label={t("targets.width")}
+            className="w-24"
+            value={width}
+            onChange={setWidth}
+          />
+          <SizeInput
+            id="custom-h"
+            label={t("targets.height")}
+            className="w-24"
+            value={height}
+            onChange={setHeight}
+          />
           <SizeInput
             id="custom-label"
-            label="Label (optional)"
+            label={t("targets.labelOptional")}
             className="w-36"
             value={label}
             onChange={setLabel}
             numeric={false}
           />
           <Button variant="outline" onClick={add}>
-            Add
+            {t("targets.add")}
           </Button>
         </div>
         {error && <p className="text-xs text-destructive">{error}</p>}
@@ -146,7 +163,7 @@ function CustomSizes() {
                 {c.label && <strong>{c.label} </strong>}
                 {c.width} × {c.height}
                 {isCustomNonStore(c) && (
-                  <span className="block text-xs text-sky-700 dark:text-sky-300">{NOT_STORE_SIZE_NOTE}</span>
+                  <span className="block text-xs text-sky-700 dark:text-sky-300">{notStoreSizeNote()}</span>
                 )}
               </span>
               <Button
@@ -155,7 +172,7 @@ function CustomSizes() {
                 className="text-destructive"
                 onClick={() => removeCustomSize(c.id)}
               >
-                Remove
+                {t("targets.remove")}
               </Button>
             </li>
           ))}
@@ -166,27 +183,24 @@ function CustomSizes() {
 }
 
 function LandscapeToggle() {
+  const { t } = useT();
   const { landscape, setLandscape } = useProject();
   return (
     <div className="flex items-center gap-2 rounded-xl border bg-card px-4 py-3">
       <Checkbox id="landscape" checked={landscape} onCheckedChange={(c) => setLandscape(c === true)} />
       <Label htmlFor="landscape" className="flex flex-col items-start gap-0.5 font-normal">
-        <span className="font-medium">Also export landscape variants</span>
-        <span className="text-xs text-muted-foreground">
-          Every selected size is also rendered rotated (folders end in -landscape).
-        </span>
+        <span className="font-medium">{t("targets.landscapeTitle")}</span>
+        <span className="text-xs text-muted-foreground">{t("targets.landscapeHint")}</span>
       </Label>
     </div>
   );
 }
 
 export function StepTarget() {
+  const { t } = useT();
   return (
     <div className="flex flex-col gap-4">
-      <Notice tone="info">
-        Pick Google Play, App Store, or both, plus any device sizes. Each slide is rendered at every size you
-        tick.
-      </Notice>
+      <Notice tone="info">{t("targets.intro")}</Notice>
       <StoreGroup store="google-play" />
       <StoreGroup store="app-store" />
       <LandscapeToggle />

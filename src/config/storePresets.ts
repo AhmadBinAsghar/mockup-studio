@@ -1,3 +1,5 @@
+import { t, tf } from "@/i18n/store";
+
 export type StoreId = "google-play" | "app-store";
 export type DeviceType = "phone" | "tablet";
 
@@ -137,10 +139,10 @@ export function isKnownStoreSize(width: number, height: number): boolean {
 
 export function validateCustomSize(width: number, height: number): string | null {
   if (!Number.isInteger(width) || !Number.isInteger(height)) {
-    return "Width and height must be whole numbers.";
+    return t("targets.errWhole");
   }
   if (width < CUSTOM_MIN || width > CUSTOM_MAX || height < CUSTOM_MIN || height > CUSTOM_MAX) {
-    return `Each side must be between ${CUSTOM_MIN} and ${CUSTOM_MAX} px.`;
+    return t("targets.errRange", { min: CUSTOM_MIN, max: CUSTOM_MAX });
   }
   return null;
 }
@@ -151,4 +153,13 @@ export function meetsGooglePlayFormat(width: number, height: number): boolean {
   return short >= 320 && long <= 3840 && long <= short * 2;
 }
 
-export const NOT_STORE_SIZE_NOTE = "Not a Play/App Store size, fine for web or ads.";
+export const notStoreSizeNote = () => t("targets.notStoreSize");
+
+/** The preset's display name in the current language (English when no translation exists). */
+export function presetLabel(p: StorePreset): string {
+  return tf(`preset.${p.id}.label`, p.label);
+}
+
+export function presetRules(p: StorePreset): string {
+  return tf(`preset.${p.id}.rules`, p.rules);
+}

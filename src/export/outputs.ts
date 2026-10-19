@@ -1,4 +1,5 @@
-import { PRESETS, type StorePreset } from "@/config/storePresets";
+import { t } from "@/i18n/store";
+import { PRESETS, presetLabel, type StorePreset } from "@/config/storePresets";
 import type { CustomSize, OutputSize } from "@/types";
 
 export interface Targets {
@@ -10,7 +11,7 @@ export interface Targets {
 export function presetToOutput(p: StorePreset): OutputSize {
   return {
     folder: p.folder,
-    label: `${p.store === "google-play" ? "Google Play" : "App Store"} · ${p.label}`,
+    label: `${p.store === "google-play" ? "Google Play" : "App Store"} · ${presetLabel(p)}`,
     width: p.width,
     height: p.height,
     kind: p.deviceType,
@@ -22,7 +23,7 @@ function toLandscape(o: OutputSize): OutputSize {
   return {
     ...o,
     folder: `${o.folder}-landscape`,
-    label: `${o.label} (landscape)`,
+    label: t("output.landscape", { label: o.label }),
     width: o.height,
     height: o.width,
   };
